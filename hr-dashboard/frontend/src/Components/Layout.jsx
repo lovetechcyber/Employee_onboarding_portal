@@ -17,7 +17,6 @@ const variants = {
 
 function Layout({ children }) {
   const [isActive, setIsActive] = useState(true);
-  const [activeNavIndex, setActiveNavIndex] = useState(0);
 
   return (
     <div className="flex">
