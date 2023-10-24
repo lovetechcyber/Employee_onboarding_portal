@@ -1,27 +1,31 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Dashboard from './Pages/Dashboard'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Navbar from './Components/Navbar'
-import Sidebar from './Components/Sidebar'
+import Layout from './Components/Layout'
+import Home from './Pages/Home'
+import Profile from './Pages/Profile'
+import Team from './Pages/Team'
+import Documents from './Pages/Documents'
+import Announcements from './Pages/Announcements'
+import Reports from './Pages/Reports'
+
 
 function App() {
-  const [isActive, setIsActive] = useState(true)
-
   return (
     <>
     <Router>
-      <Navbar isActive={isActive} setIsActive={setIsActive} />
-      <Dashboard />
-      {/* <div className='flex'> */}
-        <Sidebar isActive={isActive} setIsActive={setIsActive} />
-      {/* </div> */}
+      <Layout>
       <Routes>
-        {/* <Route exact path='/' element={<Home isActive={isActive} setIsActive={setIsActive} />} /> */}
+        <Route exact path='/' element={<Home />} />
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/team' element={<Team />} />
+        <Route path='/documents' element={<Documents />} />
+        <Route path='/announcements' element={<Announcements />} />
+        <Route path='/reports' element={<Reports />} />
       </Routes>
+      </Layout>
     </Router>
     </>
   )
