@@ -98,7 +98,7 @@ function Layout({ children }) {
 
           <div className='w-full'>
             <NavLink 
-              to='/signout' cla
+              to='/signout'
               className={({ isActive }) => isActive ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500" : "flex space-x-3 w-full p-2 rounded cursor-pointer"} >
               <TbReportSearch />
               <span className={!isActive ? 'hidden' : 'block'}>SIGNOUT</span>
