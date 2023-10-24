@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FiSettings } from 'react-icons/fi';
 import { AiFillDashboard } from 'react-icons/ai';
@@ -32,60 +32,78 @@ function Layout({ children }) {
         </div>
 
         <div className='mt-10 flex flex-col space-y-8'>
+
           <div className='w-full'>
-            <Link to='/dashboard' className='flex space-x-3 w-full p-2 rounded cursor-pointer'>
+            <NavLink 
+              to='/dashboard'
+              className={({ isActive }) => isActive ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500" : "flex space-x-3 w-full p-2 rounded cursor-pointer"} 
+            >
               <AiFillDashboard />
               <span className={!isActive ? 'hidden' : 'block'}>DASHBOARD</span>
-            </Link>
+            </NavLink>
           </div>
 
           <div className='w-full'>
-            <Link to='/profile' className='flex space-x-3 w-full p-2 rounded cursor-pointer'>
+            <NavLink 
+              to='/profile' 
+              className={({ isActive }) => isActive ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500" : "flex space-x-3 w-full p-2 rounded cursor-pointer"} >
               <FaUserAlt />
               <span className={!isActive ? 'hidden' : 'block'}>PROFILE</span>
-            </Link>
+            </NavLink>
           </div>
 
           <div className='w-full'>
-            <Link to='/team' className='flex space-x-3 w-full p-2 rounded cursor-pointer'>
+            <NavLink 
+              to='/team'
+              className={({ isActive }) => isActive ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500" : "flex space-x-3 w-full p-2 rounded cursor-pointer"} >
               <GiTeamDowngrade />
               <span className={!isActive ? 'hidden' : 'block'}>MY TEAM</span>
-            </Link>
+            </NavLink>
           </div>
 
           <div className='w-full'>
-            <Link to='/documents' className='flex space-x-3 w-full p-2 rounded cursor-pointer'>
+            <NavLink 
+              to='/documents'
+              className={({ isActive }) => isActive ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500" : "flex space-x-3 w-full p-2 rounded cursor-pointer"} > 
               <HiOutlineDocument />
               <span className={!isActive ? 'hidden' : 'block'}>DOCUMENTS</span>
-            </Link>
+            </NavLink>
           </div>
 
           <div className='w-full'>
-            <Link to='/announcements' className='flex space-x-3 w-full p-2 rounded cursor-pointer'>
+            <NavLink 
+              to='/announcements'
+              className={({ isActive }) => isActive ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500" : "flex space-x-3 w-full p-2 rounded cursor-pointer"} > 
               <GrAnnounce />
               <span className={!isActive ? 'hidden' : 'block'}>ANNOUNCEMENTS</span>
-            </Link>
+            </NavLink>
           </div>
 
           <div className='w-full'>
-            <Link to='/reports' className='flex space-x-3 w-full p-2 rounded cursor-pointer'>
+            <NavLink 
+              to='/reports'
+              className={({ isActive }) => isActive ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500" : "flex space-x-3 w-full p-2 rounded cursor-pointer"} > 
               <TbReportSearch />
               <span className={!isActive ? 'hidden' : 'block'}>REPORTS</span>
-            </Link>
+            </NavLink>
           </div>
 
           <div className='w-full'>
-            <Link to='/timekeeping' className='flex space-x-3 w-full p-2 rounded cursor-pointer'>
+            <NavLink 
+              to='/timekeeping'
+              className={({ isActive }) => isActive ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500" : "flex space-x-3 w-full p-2 rounded cursor-pointer"} > 
               <TbReportSearch />
               <span className={!isActive ? 'hidden' : 'block'}>TIMEKEEPING</span>
-            </Link>
+            </NavLink>
           </div>
 
           <div className='w-full'>
-            <Link to='/signout' className='flex space-x-3 w-full p-2 rounded cursor-pointer'>
+            <NavLink 
+              to='/signout' cla
+              className={({ isActive }) => isActive ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500" : "flex space-x-3 w-full p-2 rounded cursor-pointer"} >
               <TbReportSearch />
               <span className={!isActive ? 'hidden' : 'block'}>SIGNOUT</span>
-            </Link>
+            </NavLink>
           </div>
 
         </div>
