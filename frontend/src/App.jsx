@@ -9,6 +9,8 @@ import Team from './Pages/Team'
 import Documents from './Pages/Documents'
 import Announcements from './Pages/Announcements'
 import Reports from './Pages/Reports'
+import Timekeeping from './Pages/Timekeeping'
+import Signout from './Pages/Signout'
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
         <Route path='/documents' element={<Documents />} />
         <Route path='/announcements' element={<Announcements />} />
         <Route path='/reports' element={<Reports />} />
+        <Route path='/timekeeping' element={<Timekeeping />} />
+        <Route path='/signout' element={<Signout />} />
       </Routes>
       </Layout>
     </Router>

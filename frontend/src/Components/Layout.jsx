@@ -35,14 +35,14 @@ function Layout({ children }) {
           <div className='w-full'>
             <Link to='/dashboard' className='flex space-x-3 w-full p-2 rounded cursor-pointer'>
               <AiFillDashboard />
-              <span className={!isActive ? 'hidden' : 'block'}>Dashboard</span>
+              <span className={!isActive ? 'hidden' : 'block'}>DASHBOARD</span>
             </Link>
           </div>
 
           <div className='w-full'>
             <Link to='/profile' className='flex space-x-3 w-full p-2 rounded cursor-pointer'>
               <FaUserAlt />
-              <span className={!isActive ? 'hidden' : 'block'}>Profile</span>
+              <span className={!isActive ? 'hidden' : 'block'}>PROFILE</span>
             </Link>
           </div>
 
@@ -73,6 +73,21 @@ function Layout({ children }) {
               <span className={!isActive ? 'hidden' : 'block'}>REPORTS</span>
             </Link>
           </div>
+
+          <div className='w-full'>
+            <Link to='/timekeeping' className='flex space-x-3 w-full p-2 rounded cursor-pointer'>
+              <TbReportSearch />
+              <span className={!isActive ? 'hidden' : 'block'}>TIMEKEEPING</span>
+            </Link>
+          </div>
+
+          <div className='w-full'>
+            <Link to='/signout' className='flex space-x-3 w-full p-2 rounded cursor-pointer'>
+              <TbReportSearch />
+              <span className={!isActive ? 'hidden' : 'block'}>SIGNOUT</span>
+            </Link>
+          </div>
+
         </div>
       </motion.div>
 
