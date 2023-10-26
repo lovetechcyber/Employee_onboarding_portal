@@ -7,7 +7,7 @@ import Tabs from '../Components/Tab';
 const Profile = () => {
   return (
     <>
-    <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
+    <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 mt-32'>
         <div className="border-l-4 border-indigo-500">
           <h1 className='pl-5 text-3xl font-semibold'>User</h1>
           <p className="pl-5 self-center text-2xl whitespace-nowrap dark:text-white">Profile</p>
