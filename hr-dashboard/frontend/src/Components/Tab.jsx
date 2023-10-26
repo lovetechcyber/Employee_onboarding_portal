@@ -19,8 +19,8 @@ const Tabs = () => {
         <li role="presentation">
           <button
             // href="#personal"
-            className={`my-2 block border bg-neutral-500 text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
-              activeTab === 'personal' ? 'text-primary' : 'text-neutral-500'
+            className={`my-2 block border px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
+              activeTab === 'personal' ? 'bg-gray-500 text-primary' : 'text-neutral-500'
             } hover:isolate hover-border-transparent hover-bg-neutral-100 focus:isolate focus-border-transparent dark-text-neutral-400 dark-hover-bg-transparent`}
             // id="tabs-home-tab3"
             onClick={() => handleTabClick('personal')}
@@ -34,8 +34,8 @@ const Tabs = () => {
         <li role="presentation">
           <a
             href="#job"
-            className={`my-2 block border bg-neutral-500 text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
-              activeTab === 'job' ? 'text-primary' : 'text-neutral-500'
+            className={`my-2 block border text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
+              activeTab === 'job' ? 'text-primary bg-gray-500' : 'text-neutral-500'
             } hover:isolate hover-border-transparent hover-bg-neutral-100 focus:isolate focus-border-transparent dark-text-neutral-400 dark-hover-bg-transparent`}
             // id="tabs-profile-tab3"
             onClick={() => handleTabClick('job')}
@@ -49,8 +49,8 @@ const Tabs = () => {
         <li role="presentation">
           <a
             href="#timeoff"
-            className={`my-2 block border bg-neutral-500 text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
-              activeTab === 'timeoff' ? 'text-primary' : 'text-neutral-500'
+            className={`my-2 block border  text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
+              activeTab === 'timeoff' ? 'text-primary bg-gray-500' : 'text-neutral-500'
             } hover:isolate hover-border-transparent hover-bg-neutral-100 focus:isolate focus-border-transparent dark-text-neutral-400 dark-hover-bg-transparent`}
             // id="tabs-messages-tab3"
             onClick={() => handleTabClick('timeoff')}
@@ -64,8 +64,8 @@ const Tabs = () => {
         <li role="presentation">
           <a
             href="#emergency"
-            className={`my-2 block border bg-neutral-500 text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
-              activeTab === 'emergency' ? 'text-primary' : 'text-neutral-500'
+            className={`my-2 block border  text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
+              activeTab === 'emergency' ? 'text-primary bg-gray-500' : 'text-neutral-500'
             } hover:isolate hover-border-transparent hover-bg-neutral-100 focus:isolate focus-border-transparent dark-text-neutral-400 dark-hover-bg-transparent`}
             // id="tabs-messages-tab3"
             onClick={() => handleTabClick('emergency')}
@@ -79,8 +79,8 @@ const Tabs = () => {
         <li role="presentation">
           <a
             href="#documents"
-            className={`my-2 block border bg-neutral-500 text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
-              activeTab === 'documents' ? 'text-primary' : 'text-neutral-500'
+            className={`my-2 block border  text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
+              activeTab === 'documents' ? 'text-primary bg-gray-500' : 'text-neutral-500'
             } hover:isolate hover-border-transparent hover-bg-neutral-100 focus:isolate focus-border-transparent dark-text-neutral-400 dark-hover-bg-transparent`}
             // id="tabs-messages-tab3"
             onClick={() => handleTabClick('documents')}
@@ -94,8 +94,8 @@ const Tabs = () => {
         <li role="presentation">
           <a
             href="#notes"
-            className={`my-2 block border bg-neutral-500 text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
-              activeTab === 'notes' ? 'text-primary' : 'text-neutral-500'
+            className={`my-2 block border  text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
+              activeTab === 'notes' ? 'text-primary bg-gray-500' : 'text-neutral-500'
             } hover:isolate hover-border-transparent hover-bg-neutral-100 focus:isolate focus-border-transparent dark-text-neutral-400 dark-hover-bg-transparent`}
             id="tabs-messages-tab3"
             onClick={() => handleTabClick('notes')}
@@ -109,8 +109,8 @@ const Tabs = () => {
         <li role="presentation">
           <a
             href="#tasks"
-            className={`my-2 block border bg-neutral-500 text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
-              activeTab === 'tasks' ? 'text-primary' : 'text-neutral-500'
+            className={`my-2 block border  text-black px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight ${
+              activeTab === 'tasks' ? 'text-primary bg-gray-500' : 'text-neutral-500'
             } hover:isolate hover-border-transparent hover-bg-neutral-100 focus:isolate focus-border-transparent dark-text-neutral-400 dark-hover-bg-transparent`}
             id="tabs-messages-tab3"
             onClick={() => handleTabClick('tasks')}
@@ -155,9 +155,6 @@ const Tabs = () => {
               <div id="dropdown" className=" bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700" onClick={toggleDropdown}>
                 <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                   <li>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                  </li>
-                  <li>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
                   </li>
                   <li>
@@ -195,9 +192,9 @@ const Tabs = () => {
                   <input type="date" name="" id="" className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date"' />
                 </div>
 
-                <div>
+                <div className='grid grid-cols-2 mt-5'>
                   <label htmlFor="name">Name</label>
-                  <input className='' type="text" />
+                  <input className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' type="text" />
                 </div>
             </form>
 
