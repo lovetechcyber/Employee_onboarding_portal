@@ -1,0 +1,234 @@
+.dashboard{
+    background-color: #f5efef8c;
+    height: 100%;
+    padding-bottom: 30px;
+}
+.dashboardWrapper{
+    overflow-y: auto;
+    scrollbar-color: transparent;
+    padding-bottom: 20px;
+    height: 100vh;
+}
+.dashboardWrapper::-webkit-scrollbar{
+    display: none; 
+}
+.dashboard header{
+    width: 100%;
+    background-color: white;
+    height: 70px;
+    margin-bottom: 10px;
+}
+.dashboard header section{
+    z-index: 1;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dashboard header section aside i{
+    font-size: 10px;
+}
+.dashboard header .headerDiv{
+    width: 40%;
+    text-align: right;
+}
+.dashboard header img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.sectionWrapper{
+    width: 100%;
+}
+.section{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.profile{
+    width: 24%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: white;
+}
+.profile div:nth-child(1){
+    height: 60px;
+    background-color: #2167D9;
+}
+.profilePic img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; 
+    margin-top: -50px; 
+}
+.profilePic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile div:nth-child(3) h4, .profile div:nth-child(3) p{
+    text-align: center;
+    margin: 0;
+}
+.profile div:nth-child(5){
+    padding: 0 0px 10px 10px;
+}
+.profile div:nth-child(3) p{
+    font-size: 14px;
+}
+.profile div:nth-child(5) h4{
+    margin: 0;
+}
+.profile div:nth-child(5) p{
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+.profile div:nth-child(5) img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; 
+}
+.secondSection{
+    width: 54%;
+}
+.secondSection img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+}
+.onboardWrapper{
+    border-radius: 6px;
+    background-color: #2167D9;
+}
+.onboard{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: rgb(251, 245, 245);
+    text-decoration: none;
+}
+.onboard div{
+   width: 80%;
+}
+.onboard div h3{
+   margin-bottom: 8px;
+}
+.onboard div p{
+   font-size: 14px;
+   margin-top: 0;
+}
+.onboard i{
+    font-size: 26px;
+}
+.secondSection section{
+    margin-top: 8px;
+    background-color: white;
+    border-radius: 8px;
+}
+.forms{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 10px;
+}
+.forms a{
+    text-decoration: none;
+    width: 200px;
+    height: 120px;
+    box-shadow: 2px 2px 6px 2px #eeecec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px;
+    color: black;
+    border-radius: 10px;
+}
+.forms a:hover{
+    background-color: rgb(197, 201, 199);
+}
+.forms a:active{
+    color: black;
+    box-shadow: 0 5px #eeecec;
+    transform: translateY(4px);
+}
+.forms a span{
+    margin:  0;
+    display: flex;
+    align-items: flex-start;
+}
+.forms a span i{
+    font-size: 21px;
+}
+.forms a span h4{
+    margin:  0 5px 0 0;
+}
+.forms p{
+    font-size: 12px;
+    margin: 0;
+    width: 150px;
+} 
+
+
+
+ /* PopUp */
+.propUp{
+    position: absolute;
+    box-shadow: 2px 2px 6px 2px #eeecec;
+    background-color: white;
+    width: 10%;
+    height: 100px;
+}
+.pops a{
+    display: flex;
+    text-decoration: none;
+    box-shadow: 2px 2px 6px 2px #eeecec;
+    align-items: center;
+    color: black;
+}
+.pops a div{
+    font-size: 18px;
+    width: 30px;
+    margin: 5px 0 0 8px;
+}
+.pops a p{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+
+@media screen and (max-width: 850px) {
+    .dashboard header .headerDiv{
+        width: 60%;
+        text-align: right;
+    }
+    .propUp{
+        width: 14%;
+    }
+}
+@media screen and (max-width: 650px){
+    .section{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .secondSection{
+        width: 74%;
+    }
+    .profile{
+        width: 44%;
+        margin-top: 30px;
+    }
+    .dashboard header .headerDiv{
+        width: 64%;
+        text-align: right;
+    }
+    .propUp{
+        width: 17%;
+    }
+}
+@media screen and (max-width: 550px){
+    .propUp{
+        width: 18%;
+    }
+}
