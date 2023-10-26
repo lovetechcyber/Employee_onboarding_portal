@@ -1,4 +1,5 @@
 const User = require("../models/user")
+const { createToken } = require("../utils/token")
 
 const loginHandler = async (req, res) => {
   const { email, password } = req.body
@@ -16,7 +17,9 @@ const loginHandler = async (req, res) => {
       throw new Error("wrong username or password")
     }
 
-    res.status(200).json({ token: "", user, message: "Login Successful" })
+    const token = createToken(user._id)
+
+    res.status(200).json({ token, user, message: "Login Successful" })
   } catch (error) {
     throw new Error("Failed to login user")
   }
