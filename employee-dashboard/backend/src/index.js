@@ -1,7 +1,13 @@
 require("dotenv").config()
-const express = require("express")
 
-const connectDb = require("./utils/connectDb.js")
+const compression = require("compression")
+const cors = require("cors")
+const express = require("express")
+const helmet = require("helmet")
+const morgan = require("morgan")
+
+const employeeRouter = require("./routes/index")
+const connectDb = require("./utils/connectDb")
 
 const app = express()
 
@@ -13,6 +19,8 @@ app.use(helmet())
 if (process.env.NODE_ENV !== "production") app.use(morgan("dev"))
 
 connectDb()
+
+app.use("/employee", employeeRouter)
 
 const PORT = process.env.PORT || 5000
 
