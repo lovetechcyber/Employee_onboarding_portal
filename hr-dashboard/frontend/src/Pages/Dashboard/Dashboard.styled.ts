@@ -6,6 +6,7 @@ export const DashboardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  top: 6rem;
 `;
 export const DashboardBody = styled.div`
   display: flex;
