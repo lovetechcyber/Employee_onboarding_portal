@@ -53,7 +53,7 @@
 }
 .profile div:nth-child(1){
     height: 60px;
-    background-color: limegreen;
+    background-color: #2167D9;
 }
 .profilePic img{
     width: 60px;
@@ -98,7 +98,7 @@
 }
 .onboardWrapper{
     border-radius: 6px;
-    background-color: rgb(72, 156, 87);
+    background-color: #2167D9;
 }
 .onboard{
     display: flex;

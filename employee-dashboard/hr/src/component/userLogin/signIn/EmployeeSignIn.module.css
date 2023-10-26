@@ -48,7 +48,7 @@
     margin-bottom: 5px;
 }
 .inputWrpapper{
-    border: 1px solid rgb(53, 176, 53);
+    border: 1px solid #2376E2;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -70,8 +70,8 @@
     width: 320px;
     height: 40px;
     border-radius: 20px;
-    border: 1px solid  rgb(53, 176, 53);
-    background-color:  rgb(53, 176, 53);
+    border: 1px solid  #2376E2;
+    background: #2376E2;
     font-size: 16px;
     color: white;
 }

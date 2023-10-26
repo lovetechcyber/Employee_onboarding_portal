@@ -3,6 +3,7 @@ import style from './Dashboard.module.css';
 import shark from '../asset/images/shark.jpg'
 import { BiSolidDownArrow } from 'react-icons/bi';
 import { CgProfile } from 'react-icons/cg';
+import { IoMdNotificationsOutline } from 'react-icons/io';
 import { MdKeyboardArrowRight, MdOutlineArrowForwardIos } from 'react-icons/md'
 import { Link } from 'react-router-dom';
 import UserPopUp from './UserPopUp';
@@ -50,6 +51,10 @@ function Dashboard(props) {
                                         <Link to="/">
                                             <div><CgProfile /></div>
                                             <p>Profile</p>
+                                        </Link>
+                                        <Link to="/">
+                                            <div><IoMdNotificationsOutline /></div>
+                                            <p>Notification</p>
                                         </Link>
                                     </div>
                                 </div>

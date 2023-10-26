@@ -1,12 +1,16 @@
 import React from 'react'
 import styles from './SideBar.module.css'
-import { IoSettingsOutline } from "react-icons/io5";
-import { BsFillPeopleFill } from "react-icons/bs";
-import { VscHome } from "react-icons/vsc";
+import { IoSettingsOutline, IoPersonOutline } from "react-icons/io5";
+import { RiTeamLine } from "react-icons/ri";
+import { TbWallet } from "react-icons/tb";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { LiaMedalSolid } from "react-icons/lia";
+import { BiMessageSquareDetail } from "react-icons/bi";
 import { FiLogIn } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import { NavLink, Link } from "react-router-dom";
 import shark from '../../asset/images/shark.jpg'
+
 
 
 function SideBar(props) {
@@ -63,17 +67,45 @@ return(
                 <div className={styles.navLink}>
                     <div className={styles.firstSectionLink} >
                         <li>
-                            <NavLink to="/"
+                            <NavLink to="/dashboard"
                             className={({isActive, isPending}) => isPending ? "pending": 
                             isActive ? styles.active : ""}>
-                                <i><VscHome /></i><p>Home</p>         
+                                <i><LuLayoutDashboard /></i><p>Dashboard</p>         
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to="/team"                 
                             className={({isActive, isPending}) => isPending ? "pending": 
                             isActive ? styles.active : ""}>
-                                <i><BsFillPeopleFill /></i><p>Team</p>    
+                                <i><RiTeamLine /></i><p>Task List</p>    
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/settings"
+                            className={({isActive, isPending}) => isPending ? "pending": 
+                            isActive ? styles.active : ""}>
+                                <i><TbWallet /></i><p>Document</p>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/settings"
+                            className={({isActive, isPending}) => isPending ? "pending": 
+                            isActive ? styles.active : ""}>
+                                <i><LiaMedalSolid /></i><p>Results</p>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/settings"
+                            className={({isActive, isPending}) => isPending ? "pending": 
+                            isActive ? styles.active : ""}>
+                                <i><IoPersonOutline /></i><p>Training</p>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/settings"
+                            className={({isActive, isPending}) => isPending ? "pending": 
+                            isActive ? styles.active : ""}>
+                                <i><BiMessageSquareDetail /></i><p>Messages</p>
                             </NavLink>
                         </li>
                         <li>
