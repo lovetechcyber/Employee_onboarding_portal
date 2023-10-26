@@ -6,7 +6,6 @@ import Tasks from "./Tasks";
 import TimeOff from "./TimeOff";
 import WhoIsWorking from "./WhoIsWorking";
 import CompanyLinks from "./CompanyLinks";
-import ChatIcon from "./ChatIcon";
 
 const Dashboard = () => {
   return (
@@ -19,7 +18,6 @@ const Dashboard = () => {
         <WhoIsWorking />
         <CompanyLinks />
       </DashboardBody>
-      <ChatIcon />
     </DashboardWrapper>
   );
 };
