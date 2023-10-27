@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "./Components/Layout";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
-import Team from "./Pages/Team";
+import Team from "./Pages/MyTeam";
 import Documents from "./Pages/Documents";
 import Announcements from "./Pages/Announcements";
 import Reports from "./Pages/Reports";

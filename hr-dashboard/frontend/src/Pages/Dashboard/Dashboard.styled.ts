@@ -165,6 +165,7 @@ export const TaskCardWrapper = styled.div`
 export const TaskCardLeft = styled.div`
   display: flex;
   gap: 0.5rem;
+  align-items:center;
 
   input {
     cursor: pointer;
