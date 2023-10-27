@@ -8,6 +8,7 @@ const SideBar: React.FC<SideBarProps> = ({ activeLink, onClick }) => {
     <SideBarWrapper>
       {sideBarData.map((data) => (
         <SideBarTitle
+          key={data}
           $bgColor={data === activeLink ? "rgb(30 58 138)" : ""}
           $color={data === activeLink ? "#fff" : "rgb(30 58 138)"}
           onClick={() => onClick(data)}

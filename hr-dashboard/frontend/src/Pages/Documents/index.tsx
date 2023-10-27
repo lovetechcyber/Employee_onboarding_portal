@@ -57,6 +57,7 @@ const Documents = () => {
           </Headings>
           {displayedDocs.map((doc) => (
             <DocumentCard
+              key={doc.docName}
               date={doc.date}
               docName={doc.docName}
               docType={doc.docType}
