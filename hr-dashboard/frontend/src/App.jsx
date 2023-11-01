@@ -12,6 +12,7 @@ import Reports from "./Pages/Reports";
 import Timekeeping from "./Pages/Timekeeping";
 import Signout from "./Pages/Signout";
 import ChatIcon from "./Pages/Dashboard/ChatIcon";
+import Timecard from "./Pages/Timecard";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/announcements" element={<Announcements />} />
             <Route path="/reports" element={<Reports />} />
             <Route path="/timekeeping" element={<Timekeeping />} />
+            <Route path="/timecard" element={<Timecard />} />
             <Route path="/signout" element={<Signout />} />
           </Routes>
           <ChatIcon />
