@@ -169,7 +169,9 @@ function Layout({ children }) {
           </div>
         </HeaderWrapper>
 
-        <div className="">{children}</div>
+        <div className={!isActive ? "md:-ml-56" : "block"}>
+          {children}
+        </div>
       </ChildrenWrapper>
     </div>
   );
@@ -194,18 +196,6 @@ const ChildrenWrapper = styled.div`
   margin-left: auto;
 `;
 
-// const ChildrenWrapper = styled.div`
-//   width: ${({ $headerWidth }) => $headerWidth};
-//   margin-left: ${({ $headerWidth }) =>
-//     $headerWidth === "calc(100vw - 20vw)" ? "20vw" : "5vw"};
-//   transition: margin-left 0.3s; /* Add a smooth transition effect */
-// `;
 
-// const ChildrenWrapper = styled.div`
-//   width: ${({ $headerWidth }) => $headerWidth};
-//   margin-left: ${({ $headerWidth }) =>
-//     $headerWidth === "calc(100vw - 20vw)" ? "20vw" : "5vw"};
-//   transition: width 0.3s, margin-left 0.3s; /* Add a smooth transition effect */
-// `;
 
 
