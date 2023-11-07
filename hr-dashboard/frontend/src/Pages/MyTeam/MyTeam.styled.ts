@@ -129,7 +129,7 @@ export const MemberDetailsWrapper = styled.div`
   width: 80%;
   margin-left: auto;
   // border:solid red;
-  align-items: center;
+  // align-items: center;
   // gap:55%;
 `;
 export const MemberDetailsLeft = styled.div`
@@ -147,6 +147,7 @@ export const MemberDetailsRight = styled.div`
   flex-direction: column;
   gap: 0.2rem;
   width: 15rem;
+  // border:1px solid red;
 
   .delete-container {
     cursor: pointer;
