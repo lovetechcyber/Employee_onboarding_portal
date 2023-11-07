@@ -169,7 +169,9 @@ function Layout({ children }) {
           </div>
         </HeaderWrapper>
 
-        {children}
+        <div className={!isActive ? "md:-ml-56" : "block"}>
+          {children}
+        </div>
       </ChildrenWrapper>
     </div>
   );
@@ -193,3 +195,7 @@ const ChildrenWrapper = styled.div`
   width: calc(100vw - 20vw);
   margin-left: auto;
 `;
+
+
+
+
