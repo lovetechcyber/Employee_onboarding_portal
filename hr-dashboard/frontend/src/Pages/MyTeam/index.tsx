@@ -25,14 +25,19 @@ import DraftTeamMembers from "./DraftTeamMembers";
 import TeamMembers from "./TeamMembers";
 import { allTeamMembers } from "./MyTeamData";
 import { TeamMemberProps } from "./utils";
+import { useLocation } from "react-router-dom";
+import Modal from "./Modal";
+import TeamMemberForm from "./TeamMemberForm";
 
 const Team = () => {
+  const location = useLocation();
   const [indexes, setIndexes] = useState<number[]>([3]);
   const [searchValue, setSearchValue] = useState<string>("");
   const [showActiveEmployees, setShowActiveEmployees] = useState<boolean>(true);
   const [displayedMembers, setDisplayedMembers] = useState<TeamMemberProps[]>([
     ...allTeamMembers,
   ]);
+  const [openModal, setOpenModal] = useState(false);
 
   const addIndexToArr = (num: number) => {
     !indexes.includes(num)
@@ -60,7 +65,8 @@ const Team = () => {
           (prevMembers) => (prevMembers = [...inactiveTeamMembers])
         )
       : setDisplayedMembers(allTeamMembers);
-  }, [showActiveEmployees]);
+    location.state ? setOpenModal(true) : setOpenModal(false);
+  }, [showActiveEmployees, location.state]);
 
   return (
     <MyTeamWrapper>
@@ -70,7 +76,11 @@ const Team = () => {
           <span>Michael Scott</span>
         </MyTeamTopLeft>
         <MyTeamTopRight>
-          <SearchInput onChange={handleSearchInputChange} value={searchValue} />
+          <SearchInput
+            onChange={handleSearchInputChange}
+            value={searchValue}
+            required
+          />
           {searchBtnsText.map((text) => (
             <SearchBtns
               key={text}
@@ -121,6 +131,7 @@ const Team = () => {
           </EachTeamContent>
         ))}
       </TeamsWrapper>
+      {openModal && <Modal children={<TeamMemberForm />} />}
     </MyTeamWrapper>
   );
 };

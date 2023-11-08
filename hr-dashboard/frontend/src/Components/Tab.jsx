@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CgProfile } from "react-icons/cg";
 
 const Tabs = () => {
-  const [activeTab, setActiveTab] = useState('tabs-home3');
+  const [activeTab, setActiveTab] = useState('personal');
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const handleTabClick = (tab) => {
@@ -147,7 +147,7 @@ const Tabs = () => {
             >
               Manage
               <svg className="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
               </svg>
             </button>
 

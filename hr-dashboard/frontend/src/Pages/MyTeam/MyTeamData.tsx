@@ -243,3 +243,11 @@ export const inactiveTeamMembers: TeamMemberProps[] = [
 ];
 
 // Now the 'teamMembers2' array contains another 10 objects based on the TeamMemberProps interface.
+
+export const userFormLabels: string[] = [
+  "First Name",
+  "Profile Photo",
+  "Email",
+  "Phone Number",
+  "Position",
+];

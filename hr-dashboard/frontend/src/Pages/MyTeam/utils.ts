@@ -42,3 +42,7 @@ export interface TeamMemberAvatarProp {
 export interface TeamMembersProps {
   allTeamMembers: TeamMemberProps[];
 }
+
+export interface DeleteBtnsProps {
+
+}

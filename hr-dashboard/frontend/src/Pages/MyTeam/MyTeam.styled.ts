@@ -6,6 +6,7 @@ import {
   SearchBtnsProps,
   TeamMemberAvatarProp,
 } from "./utils";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 export const MyTeamWrapper = styled.div`
   display: flex;
@@ -285,4 +286,80 @@ export const TeamMemberBodyRight = styled.div`
 export const Position_ProfileLink = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const ModalWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  //   background: rgba(9, 18, 39, 0.51);
+`;
+
+export const TeamMemberRegForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+export const TeamMemberRegFormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  position: relative;
+  width: 50%;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 0.2rem;
+`;
+
+export const TeamMemberFormLabel = styled.label`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  input {
+    border: 1px solid grey;
+    width: 70%;
+    padding: 0.2rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+`;
+
+export const CloseIcon = styled(AiOutlineCloseCircle)`
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+`;
+
+export const EditButton = styled(Button)``;
+
+export const DeleteButton = styled(Button).attrs({
+  children: "Delete",
+  type: "button",
+})``;
+
+export const FormBtnsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  // border: solid red;
+  justify-content: space-around;
+`;
+
+export const YesBtn = styled(Button).attrs({ children: "Yes" })``;
+
+export const NoBtn = styled(Button).attrs({ children: "No" })``;
+
+export const DeleteBtnsWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `;
