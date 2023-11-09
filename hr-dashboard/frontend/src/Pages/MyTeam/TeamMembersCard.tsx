@@ -30,7 +30,12 @@ const TeamMembersCard: React.FC<TeamMemberProps> = ({
           <span className="name">{name}</span>
           <Position_ProfileLink>
             <span>{position}</span>
-            <Link to="/profile">Profile</Link>
+            <Link
+              to="#"
+              state={{ name, avatar, email, phoneNumber, position }}
+            >
+              Profile
+            </Link>
           </Position_ProfileLink>
         </TeamMemberBodyLeft>
         <TeamMemberBodyRight>

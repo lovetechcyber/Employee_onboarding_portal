@@ -6,6 +6,7 @@ import {
   SearchBtnsProps,
   TeamMemberAvatarProp,
 } from "./utils";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 export const MyTeamWrapper = styled.div`
   display: flex;
@@ -129,7 +130,7 @@ export const MemberDetailsWrapper = styled.div`
   width: 80%;
   margin-left: auto;
   // border:solid red;
-  align-items: center;
+  // align-items: center;
   // gap:55%;
 `;
 export const MemberDetailsLeft = styled.div`
@@ -147,6 +148,7 @@ export const MemberDetailsRight = styled.div`
   flex-direction: column;
   gap: 0.2rem;
   width: 15rem;
+  // border:1px solid red;
 
   .delete-container {
     cursor: pointer;
@@ -284,4 +286,117 @@ export const TeamMemberBodyRight = styled.div`
 export const Position_ProfileLink = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const ModalWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  // background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  //   background: rgba(9, 18, 39, 0.51);
+  background: rgba(30, 58, 138, 0.5);
+`;
+
+export const TeamMemberRegForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+export const TeamMemberRegFormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  position: relative;
+  width: 50%;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 0.2rem;
+`;
+
+export const TeamMemberFormLabel = styled.label<{ $inputColor: string }>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  input {
+    border: 1px solid grey;
+    width: 70%;
+    padding: 0.2rem;
+    color: ${({ $inputColor }) => $inputColor};
+
+    &:focus {
+      outline: none;
+    }
+  }
+`;
+
+export const CloseIcon = styled(AiOutlineCloseCircle)`
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+`;
+
+export const EditButton = styled(Button)`
+  background: #327fff;
+  padding: 0.2rem 1rem;
+  border-radius: 0.2rem;
+  color: #fff;
+`;
+
+export const DeleteButton = styled(Button).attrs({
+  children: "Delete",
+  type: "button",
+})`
+  background: #d54d1e;
+  padding: 0.2rem 1rem;
+  border-radius: 0.2rem;
+  color: #fff;
+`;
+
+export const FormBtnsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  // border: solid red;
+  justify-content: space-around;
+  position: relative;
+`;
+
+export const DeletePromptWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  background: #fff;
+  bottom: 110%;
+  right: 0;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Dark box shadow effect */
+`;
+
+export const YesBtn = styled(Button).attrs({ children: "Yes" })`
+  background: #d54d1e;
+  padding: 0.2rem 1rem;
+  border-radius: 0.2rem;
+  color: #fff;
+`;
+
+export const NoBtn = styled(Button).attrs({ children: "No" })`
+  background: #327fff;
+  padding: 0.2rem 1rem;
+  border-radius: 0.2rem;
+  color: #fff;
+`;
+
+export const DeleteBtnsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
 `;

@@ -8,6 +8,7 @@ const TeamMembers: React.FC<TeamMembersProps> = ({ allTeamMembers }) => {
     <OnboardingTeamMembersWrapper>
       {allTeamMembers.map((member) => (
         <TeamMembersCard
+          key={member.email}
           avatar={member.avatar}
           name={member.name}
           position={member.position}

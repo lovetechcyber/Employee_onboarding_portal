@@ -42,3 +42,13 @@ export interface TeamMemberAvatarProp {
 export interface TeamMembersProps {
   allTeamMembers: TeamMemberProps[];
 }
+
+export interface DeleteBtnsProps {
+  detail: string;
+  onClickYes: () => void;
+  onClickNo: () => void;
+}
+export interface TeamMemberFormProps {
+  deleteMember: (email: string) => void;
+  updateMember: (details: TeamMemberProps) => void;
+}

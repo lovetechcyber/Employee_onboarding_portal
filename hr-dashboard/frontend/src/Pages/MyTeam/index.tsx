@@ -25,14 +25,20 @@ import DraftTeamMembers from "./DraftTeamMembers";
 import TeamMembers from "./TeamMembers";
 import { allTeamMembers } from "./MyTeamData";
 import { TeamMemberProps } from "./utils";
+import { useLocation, useNavigate } from "react-router-dom";
+import Modal from "./Modal";
+import TeamMemberForm from "./TeamMemberForm";
 
 const Team = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [indexes, setIndexes] = useState<number[]>([3]);
   const [searchValue, setSearchValue] = useState<string>("");
   const [showActiveEmployees, setShowActiveEmployees] = useState<boolean>(true);
   const [displayedMembers, setDisplayedMembers] = useState<TeamMemberProps[]>([
     ...allTeamMembers,
   ]);
+  const [openModal, setOpenModal] = useState(false);
 
   const addIndexToArr = (num: number) => {
     !indexes.includes(num)
@@ -54,6 +60,22 @@ const Team = () => {
     setShowActiveEmployees((prev) => !prev);
   };
 
+  const handleDeleteMember = (email: string) => {
+    setDisplayedMembers((prevMembers) =>
+      prevMembers.filter((member) => member.email !== email)
+    );
+  };
+
+  const handleUpdateMember = (memberDetails: TeamMemberProps) => {
+    const memberIndex = displayedMembers.findIndex(
+      (member) => member.email === memberDetails.email
+    );
+    const newArr = [...displayedMembers];
+    newArr[memberIndex] = memberDetails;
+    setDisplayedMembers(newArr);
+    navigate("#", { state: null });
+  };
+
   useEffect(() => {
     displayedMembers === allTeamMembers
       ? setDisplayedMembers(
@@ -62,6 +84,9 @@ const Team = () => {
       : setDisplayedMembers(allTeamMembers);
   }, [showActiveEmployees]);
 
+  useEffect(() => {
+    location.state ? setOpenModal(true) : setOpenModal(false);
+  }, [location.state]);
   return (
     <MyTeamWrapper>
       <MyTeamTop>
@@ -70,7 +95,11 @@ const Team = () => {
           <span>Michael Scott</span>
         </MyTeamTopLeft>
         <MyTeamTopRight>
-          <SearchInput onChange={handleSearchInputChange} value={searchValue} />
+          <SearchInput
+            onChange={handleSearchInputChange}
+            value={searchValue}
+            required
+          />
           {searchBtnsText.map((text) => (
             <SearchBtns
               key={text}
@@ -121,6 +150,18 @@ const Team = () => {
           </EachTeamContent>
         ))}
       </TeamsWrapper>
+      {openModal && (
+        <Modal
+          children={
+            <TeamMemberForm
+              deleteMember={(email: string) => handleDeleteMember(email)}
+              updateMember={(details: TeamMemberProps) =>
+                handleUpdateMember(details)
+              }
+            />
+          }
+        />
+      )}
     </MyTeamWrapper>
   );
 };
