@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AiFillFileText, AiOutlineDownload } from "react-icons/ai";
 import { Button, Modal } from 'flowbite-react';
 
-function Component() {
+function ModalComponent() {
   const [openModal, setOpenModal] = useState(false);
 
   function onCloseModal() {
@@ -43,4 +43,4 @@ function Component() {
   );
 }
 
-export default Component;
+export default ModalComponent;

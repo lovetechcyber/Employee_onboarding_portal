@@ -4,8 +4,10 @@ import { BsCalendarDateFill, BsArrowReturnRight } from "react-icons/bs";
 import { BiDirections, BiLinkExternal } from "react-icons/bi";
 import { FiRefreshCcw, FiExternalLink } from "react-icons/fi";
 import Popover from '../Components/Popover';
-import Component from '../Components/FileModal';
 import Sidebar from '../Components/Sidebar';
+import ModalComponent from '../Components/FileModal';
+import AccordionComponent from '../Components/Accordion';
+import AccordionComp from '../Components/Accordion';
 
 
 const Home = () => {
@@ -114,7 +116,7 @@ const Home = () => {
                     <p>Download your file</p>
                   </div>
                   <div className=''>
-                    <Component />
+                    <ModalComponent />
                   </div>
                 </div>
             </div>
@@ -132,26 +134,16 @@ const Home = () => {
                 <FiRefreshCcw size={30} />
               </div>
             </div>
-            <div className="w-full flex justify-between p-3 mt-3 bg-green-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-              <div className='flex'>
-                <BsArrowReturnRight size={25} />
-                <p>Open tasks</p>
-                {/* <Collapse /> */}
-              </div>
-              <div className='flex text-red-500'>
-                <BiLinkExternal size={25} />
-                <p>tasks are overdue</p>
-              </div>
-              <div className='flex'>
-                <FiExternalLink size={25} />
-                <p>Tasks</p>
-              </div>
+            
+            <div className='md:p-8'>
+              <AccordionComponent />
             </div>
             </div>
 
-            <div className="p-4 bg-white shadow rounded-lg md:p-8">
+            <div className="mt-3 p-4 bg-white shadow rounded-lg md:p-8">
             <h2 className="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Activity</h2>
             <p className="mb-3 text-gray-500 dark:text-gray-400">You can write any comment, feedback or question here. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam autem aspernatur ut repudiandae praesentium dicta! Nam consectetur</p>
+            {/* <AccordionComponent /> */}
          
             </div>
             
