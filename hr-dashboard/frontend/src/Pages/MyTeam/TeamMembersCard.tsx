@@ -31,7 +31,7 @@ const TeamMembersCard: React.FC<TeamMemberProps> = ({
           <Position_ProfileLink>
             <span>{position}</span>
             <Link
-              to="/team"
+              to="#"
               state={{ name, avatar, email, phoneNumber, position }}
             >
               Profile

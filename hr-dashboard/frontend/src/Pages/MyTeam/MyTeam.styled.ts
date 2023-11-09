@@ -297,9 +297,10 @@ export const ModalWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.6);
+  // background: rgba(0, 0, 0, 0.6);
   z-index: 9999;
   //   background: rgba(9, 18, 39, 0.51);
+  background: rgba(30, 58, 138, 0.5);
 `;
 
 export const TeamMemberRegForm = styled.form`
@@ -318,7 +319,7 @@ export const TeamMemberRegFormWrapper = styled.div`
   border-radius: 0.2rem;
 `;
 
-export const TeamMemberFormLabel = styled.label`
+export const TeamMemberFormLabel = styled.label<{ $inputColor: string }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -327,6 +328,7 @@ export const TeamMemberFormLabel = styled.label`
     border: 1px solid grey;
     width: 70%;
     padding: 0.2rem;
+    color: ${({ $inputColor }) => $inputColor};
 
     &:focus {
       outline: none;
@@ -341,25 +343,60 @@ export const CloseIcon = styled(AiOutlineCloseCircle)`
   font-size: 1.5rem;
 `;
 
-export const EditButton = styled(Button)``;
+export const EditButton = styled(Button)`
+  background: #327fff;
+  padding: 0.2rem 1rem;
+  border-radius: 0.2rem;
+  color: #fff;
+`;
 
 export const DeleteButton = styled(Button).attrs({
   children: "Delete",
   type: "button",
-})``;
+})`
+  background: #d54d1e;
+  padding: 0.2rem 1rem;
+  border-radius: 0.2rem;
+  color: #fff;
+`;
 
 export const FormBtnsWrapper = styled.div`
   display: flex;
   align-items: center;
   // border: solid red;
   justify-content: space-around;
+  position: relative;
 `;
 
-export const YesBtn = styled(Button).attrs({ children: "Yes" })``;
+export const DeletePromptWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  background: #fff;
+  bottom: 110%;
+  right: 0;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Dark box shadow effect */
+`;
 
-export const NoBtn = styled(Button).attrs({ children: "No" })``;
+export const YesBtn = styled(Button).attrs({ children: "Yes" })`
+  background: #d54d1e;
+  padding: 0.2rem 1rem;
+  border-radius: 0.2rem;
+  color: #fff;
+`;
+
+export const NoBtn = styled(Button).attrs({ children: "No" })`
+  background: #327fff;
+  padding: 0.2rem 1rem;
+  border-radius: 0.2rem;
+  color: #fff;
+`;
 
 export const DeleteBtnsWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  width: 100%;
 `;

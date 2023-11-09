@@ -25,12 +25,13 @@ import DraftTeamMembers from "./DraftTeamMembers";
 import TeamMembers from "./TeamMembers";
 import { allTeamMembers } from "./MyTeamData";
 import { TeamMemberProps } from "./utils";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import TeamMemberForm from "./TeamMemberForm";
 
 const Team = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [indexes, setIndexes] = useState<number[]>([3]);
   const [searchValue, setSearchValue] = useState<string>("");
   const [showActiveEmployees, setShowActiveEmployees] = useState<boolean>(true);
@@ -59,15 +60,33 @@ const Team = () => {
     setShowActiveEmployees((prev) => !prev);
   };
 
+  const handleDeleteMember = (email: string) => {
+    setDisplayedMembers((prevMembers) =>
+      prevMembers.filter((member) => member.email !== email)
+    );
+  };
+
+  const handleUpdateMember = (memberDetails: TeamMemberProps) => {
+    const memberIndex = displayedMembers.findIndex(
+      (member) => member.email === memberDetails.email
+    );
+    const newArr = [...displayedMembers];
+    newArr[memberIndex] = memberDetails;
+    setDisplayedMembers(newArr);
+    navigate("#", { state: null });
+  };
+
   useEffect(() => {
     displayedMembers === allTeamMembers
       ? setDisplayedMembers(
           (prevMembers) => (prevMembers = [...inactiveTeamMembers])
         )
       : setDisplayedMembers(allTeamMembers);
-    location.state ? setOpenModal(true) : setOpenModal(false);
-  }, [showActiveEmployees, location.state]);
+  }, [showActiveEmployees]);
 
+  useEffect(() => {
+    location.state ? setOpenModal(true) : setOpenModal(false);
+  }, [location.state]);
   return (
     <MyTeamWrapper>
       <MyTeamTop>
@@ -131,7 +150,18 @@ const Team = () => {
           </EachTeamContent>
         ))}
       </TeamsWrapper>
-      {openModal && <Modal children={<TeamMemberForm />} />}
+      {openModal && (
+        <Modal
+          children={
+            <TeamMemberForm
+              deleteMember={(email: string) => handleDeleteMember(email)}
+              updateMember={(details: TeamMemberProps) =>
+                handleUpdateMember(details)
+              }
+            />
+          }
+        />
+      )}
     </MyTeamWrapper>
   );
 };

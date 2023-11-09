@@ -1,15 +1,28 @@
 import React from "react";
-import { DeleteBtnsWrapper, NoBtn, YesBtn } from "./MyTeam.styled";
+import {
+  DeleteBtnsWrapper,
+  DeletePromptWrapper,
+  NoBtn,
+  YesBtn,
+} from "./MyTeam.styled";
+import { DeleteBtnsProps } from "./utils";
+import { Link } from "react-router-dom";
 
-const DeletePrompt = () => {
+const DeletePrompt: React.FC<DeleteBtnsProps> = ({
+  onClickYes,
+  onClickNo,
+  detail,
+}) => {
   return (
-    <div>
-      <span>Are you sure you want to delete {}</span>
+    <DeletePromptWrapper>
+      <span>Are you sure you want to delete {detail}?</span>
       <DeleteBtnsWrapper>
-        <YesBtn />
-        <NoBtn />
+        <Link to="#" state={null}>
+          <YesBtn onClick={onClickYes} />
+        </Link>
+        <NoBtn onClick={onClickNo} />
       </DeleteBtnsWrapper>
-    </div>
+    </DeletePromptWrapper>
   );
 };
 

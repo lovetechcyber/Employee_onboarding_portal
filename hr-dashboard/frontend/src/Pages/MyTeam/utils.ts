@@ -44,5 +44,11 @@ export interface TeamMembersProps {
 }
 
 export interface DeleteBtnsProps {
-
+  detail: string;
+  onClickYes: () => void;
+  onClickNo: () => void;
+}
+export interface TeamMemberFormProps {
+  deleteMember: (email: string) => void;
+  updateMember: (details: TeamMemberProps) => void;
 }
