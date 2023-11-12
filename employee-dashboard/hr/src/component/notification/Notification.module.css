@@ -1,0 +1,44 @@
+.notif{
+    width: 100%;
+    font-family: Inter;
+    height: 100%;
+}
+.notif header{
+    font-family: AG medium;
+    width: 135px;
+    height: 125px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.notifMain{
+    box-shadow: 2px 2px 6px 2px #e1dbdb;
+    height: fit-content;
+    padding: 0px 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.titl{
+    height: fit-content;
+    padding-left: 5px;
+    width: 90%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.date, .time{
+    margin: 0;
+    font-size: 14px;
+}
+.titl h3{
+    margin: 5px 0;
+    width: 50%;
+    height: fit-content;
+}
+.sum{
+    padding-left: 8px;
+    height: fit-content;
+    margin: 0;
+    font-size: 14px;
+}

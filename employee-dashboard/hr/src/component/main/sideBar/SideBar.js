@@ -4,8 +4,7 @@ import { IoSettingsOutline, IoPersonOutline } from "react-icons/io5";
 import { RiTeamLine } from "react-icons/ri";
 import { TbWallet } from "react-icons/tb";
 import { LuLayoutDashboard } from "react-icons/lu";
-import { LiaMedalSolid } from "react-icons/lia";
-import { BiMessageSquareDetail } from "react-icons/bi";
+import { BiMessageSquareDetail, BiTask } from "react-icons/bi";
 import { FiLogIn } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import { NavLink, Link } from "react-router-dom";
@@ -74,35 +73,35 @@ return(
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/team"                 
+                            <NavLink to="/task"                 
                             className={({isActive, isPending}) => isPending ? "pending": 
                             isActive ? styles.active : ""}>
-                                <i><RiTeamLine /></i><p>Task List</p>    
+                                <i><BiTask /></i><p>Task List</p>    
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/settings"
+                            <NavLink to="/document"
                             className={({isActive, isPending}) => isPending ? "pending": 
                             isActive ? styles.active : ""}>
                                 <i><TbWallet /></i><p>Document</p>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/settings"
+                            <NavLink to="/team"
                             className={({isActive, isPending}) => isPending ? "pending": 
                             isActive ? styles.active : ""}>
-                                <i><LiaMedalSolid /></i><p>Results</p>
+                                <i><RiTeamLine /></i><p>Team Members</p>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/settings"
+                            <NavLink to="/training"
                             className={({isActive, isPending}) => isPending ? "pending": 
                             isActive ? styles.active : ""}>
                                 <i><IoPersonOutline /></i><p>Training</p>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/settings"
+                            <NavLink to="/message"
                             className={({isActive, isPending}) => isPending ? "pending": 
                             isActive ? styles.active : ""}>
                                 <i><BiMessageSquareDetail /></i><p>Messages</p>

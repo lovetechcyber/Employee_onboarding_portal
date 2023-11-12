@@ -1,0 +1,222 @@
+.mess{
+    width: 100%;
+    height: 100%;
+    padding: 70px 0px 0px 0px;
+    display: flex;
+}
+.chat{
+    width: 80%;
+    height: 100vh;
+    background-color: #F5F5F5;
+}
+.chat main{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: #F5F5F5;
+}
+.chat main::-webkit-scrollbar{
+    display: none;
+}
+.header{
+    position: fixed;
+    display: flex;
+    width: 80%;
+    height: 70px;  
+    background-color: #e1dbdb;
+}
+.header header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 140px;
+}
+.header img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.date{
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+}
+.date p{
+    width: fit-content;
+    height: fit-content;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background-color: pink;
+}
+.warn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.warn p{
+    width: 200px;
+    padding: 0 1px 0 6px;
+    height: fit-content;
+    background-color: grey;
+    font-size: 11px;
+    border-radius: 8px;
+}
+.chatBox{
+    width: 100%;
+}
+.replyChat{
+    width: 100%;
+    height: fit-content;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+.replyChat div{
+    width: 50%;
+    padding: 0;
+    font-size: 14px;    
+}
+.replyChat aside{
+    width: fit-content;
+    height: fit-content; 
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    border-radius: 6px;
+    padding: 1px 4px;
+    box-shadow: 2px 2px 6px 2px #e1dbdb;
+    font-size: 13px;
+    background-color: white;
+}
+.replyChat p{
+    font-size: 10px;
+    margin: 4px 0px 0px 4px;
+}
+.userChat{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    justify-content: flex-end;
+}
+.userChat .userChats{
+    width: 50%;
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.userChat .userChats div{
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(150, 204, 150);
+    box-shadow: 2px 2px 6px 2px #e1dbdb;
+    border-radius: 6px;
+    padding: 1px 4px;
+    margin-right: 10px;
+    font-size: 13px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.userChats p{
+    font-size: 10px;
+    margin: 4px 0px 0px 4px;
+}
+.userChat i{
+    margin: 2px 0px 0px 10px;
+    font-size: 9px;
+}
+.chat main form{
+    position: fixed;
+    background-color: pink;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 60px;
+}
+.chat main form section{
+    height: 60px;
+    width: 98%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.chat main form section div{
+    width: 80%;
+    border: 1px solid white;
+    border-radius: 6px;
+    height: 40px;
+    background-color: white;
+}
+.chat main form section div input{
+    border: none;
+    width: 76%;
+    background-color: transparent;
+    outline: none;
+    height: 35px;
+    padding-left: 10px;
+}
+.chat main form section button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+.label{
+    width: 20%;
+    box-shadow: 2px 2px 6px 2px #e1dbdb;
+}
+.lbHeader{
+    position: fixed;
+    background-color: #f8eded;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 70px;
+}
+.lbHeader div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+}
+.label div img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.personnel{
+    height: 100vh;
+    overflow-y: scroll;
+}
+.personnel::-webkit-scrollbar{
+    display: none;
+}
+.pBox{
+    margin-top: 70px;    
+    height: fit-content;
+    padding: 5px 0px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+.pBox .pWrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+}
+.pBox .pWrap:hover{
+    cursor: pointer;
+}
+.pWrap div{
+    width: 60%;
+}
+.pWrap p{
+    font-size: 14px;
+    font-weight: 500;
+}

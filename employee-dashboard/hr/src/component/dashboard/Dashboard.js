@@ -1,23 +1,16 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import style from './Dashboard.module.css';
 import shark from '../asset/images/shark.jpg'
-import { BiSolidDownArrow } from 'react-icons/bi';
-import { CgProfile } from 'react-icons/cg';
-import { IoMdNotificationsOutline } from 'react-icons/io';
 import { MdKeyboardArrowRight, MdOutlineArrowForwardIos } from 'react-icons/md'
 import { Link } from 'react-router-dom';
-import UserPopUp from './UserPopUp';
 
 
 
 function Dashboard(props) {
 
     const { sendNavBar } = props
-    const [showProfile, setShowProfile] = useState(false)
 
-    const showSidePop = () =>{
-        setShowProfile(!showProfile)
-    }
+
 
     const bodyRef = useRef();
  
@@ -29,9 +22,11 @@ function Dashboard(props) {
 
     }
 
-
+    const checked = () =>{
+        
+    }
   return (
-    <div className={style.dashboard}>
+    <div className={style.dashboard} onLoad={checked}>
         <div className={style.dashboardWrapper}  
             ref={bodyRef} onScroll={bodyScroll}>
             <header>
@@ -40,26 +35,6 @@ function Dashboard(props) {
                         <div className={style.headerDiv}>
                             <h1>Welcome Back Jack!</h1>
                         </div>
-                        <aside onClick={showSidePop}>
-                            <img src={shark} alt='sha' />
-                            <i><BiSolidDownArrow /></i>
-
-                            <UserPopUp trigger={showProfile}
-                            >
-                                <div className={style.propUp}>
-                                    <div className={style.pops}>
-                                        <Link to="/">
-                                            <div><CgProfile /></div>
-                                            <p>Profile</p>
-                                        </Link>
-                                        <Link to="/">
-                                            <div><IoMdNotificationsOutline /></div>
-                                            <p>Notification</p>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </UserPopUp>
-                        </aside>
                     </section>
                 </div>
             </header>
@@ -104,7 +79,7 @@ function Dashboard(props) {
                             </div>
                             <section>
                                 <div className={style.forms}>
-                                    <Link to="/">
+                                    <Link to="/profile">
                                         <aside>
                                             <img src={shark} alt='sha' />
                                             <span>
@@ -114,17 +89,7 @@ function Dashboard(props) {
                                             <p>take a look</p>
                                         </aside>
                                     </Link>
-                                    <Link to="/">
-                                        <aside>
-                                            <img src={shark} alt='sha' />
-                                            <span>
-                                                <h4>Directory</h4>
-                                                <i><MdKeyboardArrowRight /></i>
-                                            </span>
-                                            <p>take a look</p>
-                                        </aside>
-                                    </Link>
-                                    <Link to="/">
+                                    <Link to="/myleave">
                                         <aside>
                                             <img src={shark} alt='sha' />
                                             <span>
@@ -134,7 +99,7 @@ function Dashboard(props) {
                                             <p>take a look</p>
                                         </aside>
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/timesheet">
                                         <aside>
                                             <img src={shark} alt='sha' />
                                             <span>
@@ -144,7 +109,7 @@ function Dashboard(props) {
                                             <p>take a look</p>
                                         </aside>
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/mygoals">
                                         <aside>
                                             <img src={shark} alt='sha' />
                                             <span>
@@ -154,21 +119,11 @@ function Dashboard(props) {
                                             <p>take a look</p>
                                         </aside>
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/payslips">
                                         <aside>
                                             <img src={shark} alt='sha' />
                                             <span>
                                                 <h4>My Payslips</h4>
-                                                <i><MdKeyboardArrowRight /></i>
-                                            </span>
-                                            <p>take a look</p>
-                                        </aside>
-                                    </Link>
-                                    <Link to="/">
-                                        <aside>
-                                            <img src={shark} alt='sha' />
-                                            <span>
-                                                <h4>My Claims</h4>
                                                 <i><MdKeyboardArrowRight /></i>
                                             </span>
                                             <p>take a look</p>

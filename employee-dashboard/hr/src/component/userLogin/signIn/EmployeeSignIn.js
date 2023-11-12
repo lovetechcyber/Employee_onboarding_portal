@@ -98,7 +98,7 @@ return (
         <div className={style.formSection}>
             <div className={style.formSectionDiv}>
             <h2>Login</h2>
-            <form className={style.regBox} onSubmit={handleSubmit}>
+            <form action="" className={style.regBox} onSubmit={handleSubmit}>
             <div className={style.boxPos}>
               <div>
                 <p>Email</p>

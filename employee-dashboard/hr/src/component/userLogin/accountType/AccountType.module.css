@@ -14,16 +14,19 @@
     align-items: center;
 }
 .accountTypeForm{
-    height: 35%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
-.accountTypeForm a{
+.accountTypeForm div{
     text-decoration: none;
-    width: 400px;
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     text-align: left;
-    padding: 16px 8px;
+    padding: 0px 16px;
     border: 1px solid #919191;
     box-sizing: border-box;
     background: white;
@@ -32,12 +35,13 @@
     border-radius: 5px;
     font-size: 20px;
     color: #000009; 
+    margin: 5px 0px;
 }
-.formSections .accountTypeForm a:hover{
-    background-color: rgb(27, 93, 27);
+.formSections .accountTypeForm div:hover{
+    background-color:#2376E2;
     color: white;
 }
-.formSections .accountTypeForm a:active{
+.formSections .accountTypeForm div:active{
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
@@ -46,7 +50,7 @@
     .accountTypeForm{
         height: 45%;
     }
-    .accountTypeForm a{
+    .accountTypeForm div{
         width: 300px; 
     }
     .container h2{

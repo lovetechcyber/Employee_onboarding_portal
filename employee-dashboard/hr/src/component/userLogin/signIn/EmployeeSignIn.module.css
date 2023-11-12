@@ -77,9 +77,9 @@
 }
 .btn:hover{
     cursor: pointer;
-    background:  rgb(27, 93, 27);
+    background:  #184894;
     color: white;
-    border: 1px solid  rgb(27, 93, 27);
+    border: 1px solid  #184894;
 }
 .btn:active{   
     box-shadow: 0 5px #666;

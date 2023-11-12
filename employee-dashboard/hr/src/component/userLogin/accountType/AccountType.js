@@ -1,12 +1,29 @@
 import React, { useState } from 'react'
 import style from './AccountType.module.css'
 import { AiFillCheckCircle } from 'react-icons/ai'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function AccountType() {
     const [employee, setEmployee] = useState(false);
     const [hrOfficer, setHrOfficer] = useState(false);
   
+    const navigate = useNavigate();
+
+    const doEmploy =  (e) => {
+    setEmployee(true);
+    // setTimeout
+    
+    setTimeout(()=>{
+        navigate("/personnel")
+    }, 400)
+}
+    const goHr =  (e) => {
+    setHrOfficer(true);
+    
+    setTimeout(()=>{
+        navigate("/hr")
+    }, 400)
+}
     return (
         <>
         <div className={style.container}>
@@ -16,34 +33,28 @@ function AccountType() {
             <div className={style.formSections}>
                 <h2 className={style.heading}>Choose account type</h2>
                 <form action="" className={style.accountTypeForm}>
-                    <Link to="/personnel"
-                    onClick={ (e) => 
-                        {
-                        setEmployee(true);
-                    } }
+                    <div 
+                    // to="/personnel"
+                    onClick={doEmploy}
                     >
-                        Personnel <span><AiFillCheckCircle 
+                      <p>Personnel</p><span><AiFillCheckCircle 
                         style={{
-                            display: employee ? 'block' : 'none',
-                            color: employee ? 'rgb(27, 93, 27)' : '',
+                            display: employee ? 'flex' : 'none',
+                            color: employee ? '#FFFFFF)' : '',
                         }}
                         /></span>
-                    </Link>
-                    <Link to="/hr" 
-                    onClick={ () => 
-                      {
-                      // e.preventDefault();
-                      setHrOfficer(true);
-                    } }
+                    </div>
+                    <div 
+                    onClick={goHr}
                     >
-                        HR Officer
+                        <p>HR Officer</p>
                     <span><AiFillCheckCircle 
                     style={{
                         display: hrOfficer ? 'block' : 'none',
-                        color: hrOfficer ? 'rgb(27, 93, 27)' : '',
+                        color: hrOfficer ? '#FFFFFF' : '',
                     }} />
                     </span>
-                  </Link>
+                  </div>
                 </form>
             </div>
           </div>      

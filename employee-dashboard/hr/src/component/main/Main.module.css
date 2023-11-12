@@ -5,7 +5,7 @@
 }
 .sideBar{
    position: fixed;
-   z-index: 1;
+   z-index: 4;
    width: 17%;
 }
 .toogleBar{
@@ -18,20 +18,116 @@
 .scrolled{
     width: 100%;
     height: 70px;
+    z-index: 1;
     position: fixed;
+    top: 0;
+    background-color: white;
+    box-shadow: 2px 2px 6px 2px #eeecec;
+}
+.scrollCh{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    z-index: 2;
+    filter: blur(2px)  brightness(70%);
+    backdrop-filter: blur(4px) contrast(80%); 
     top: 0;
     background-color: white;
     box-shadow: 2px 2px 6px 2px #eeecec;
 }
 .sideMenu{
     position: fixed;
-    z-index: 0;
+    z-index: 1;
     top: 2.5%;
     left: 1%;
     font-size: 40px;
 }
+.profile{
+    position: fixed;
+    z-index: 1;
+    top: 3%;
+    right: 5%;
+}
+.profile img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.ic{
+    position: absolute;
+    box-shadow: 2px 2px 6px 2px rgb(255, 253, 253);
+    font-size: 12px;
+    right: -5px;
+}
+.profile .ics{
+    font-size: 9px;
+}
+
+ /* PopUp */
+ .propUp{
+    position: absolute;
+    box-shadow: 2px 2px 6px 2px #eeecec;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+}
+.pops a{
+    display: flex;
+    text-decoration: none;
+    box-shadow: 2px 2px 6px 2px #eeecec;
+    align-items: center;
+    color: black;
+}
+.pops a:hover{
+    transform: translateY(2px);
+    box-shadow: 2px 2px 6px 2px #eeecec;
+}
+.pops a div{
+    font-size: 16px;
+    width: 23px;
+    margin: 5px 0 0 8px;
+}
+.pops a p{
+    font-size: 12px;
+    font-weight: 600;
+}
+.top{
+    position: absolute;
+    left: 20px;
+    font-size: 8px;
+}
+@media screen and (max-width: 1050px) {
+    .profile{
+        right: 8%;
+    }
+    .sideBar{
+        width: 22%;
+     }
+}
+@media screen and (max-width: 850px){
+    .sideBar{
+        width: 25%;
+     }
+
+}
+@media screen and (max-width: 750px){
+    .sideBar{
+        width: 28%;
+     }
+}
 @media screen and (max-width: 650px){
+    .sideBar{
+        width: 33%;
+     }
+     .profile{
+        right: 12%;
+    }
+}
+@media screen and (max-width: 550px){
     .sideBar{
         width: 37%;
      }
+     .profile{
+        right: 12%;
+    }
 }

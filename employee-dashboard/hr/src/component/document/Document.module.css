@@ -1,0 +1,363 @@
+.docs{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 30px;
+    background: #F6F5F9;
+}
+.header{
+    width: 170px;
+    height: 130px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.main{
+    width: 100%;
+}
+.gtsWrap{
+    width: 99%;
+    display: flex;
+    justify-content: center;
+}
+.gts{
+    padding: 0px 20px 35px 20px;
+    height: fit-content;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    width: 90%;
+    margin-bottom: 20px;
+}
+.gts h3{
+    margin-bottom: 8px;
+}
+.started{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.aWrap{
+    border: 1px solid #C5C5C5;
+    width: 190px;
+    border-radius: 9.68px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    padding: 10px 10px 5px 10px;
+}
+.fWrap i{
+    font-size: 24px;
+    color: #9D9797;
+    cursor: pointer;
+}
+.fWrap{
+    margin: 0;
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+}
+.fName{
+    margin: 0;
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
+}
+.deets{
+    margin: 0;
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+}
+.deets p:nth-child(1){
+    font-size: 12px;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+    background: #F1F1F1;
+    color: #827e7e;
+    border-radius: 10.89px;
+}
+.deets p:nth-child(2){
+    color: #685e5e;
+    font-size: 12px;
+}
+.fcWr{
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.gtsW{
+    padding: 0px 20px 10px 20px;
+    height: fit-content;
+    background-color: #FFFFFF;
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: none;
+    width: 90%;
+}
+.gtsWr{
+    padding: 0px 20px;
+    height: fit-content;
+    background-color: #EAECF0;
+    width: 90%;
+}
+.foldWrap{
+    display: flex;
+    width: 95%;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+.foldWrap button{
+    padding: 10px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+    border: 1px solid #FF7A00;
+    background: #FF7A00;
+}
+.layout{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    font-size: 11px;
+    background-color: #EAECF0;
+}
+.layout p:nth-child(1){
+    width: 4%;
+    font-size: 10px;
+}
+.layout p:nth-child(2){
+    width: 60%;
+}
+.layout p:nth-child(3){
+    width: 16%;
+}
+.layout p:nth-child(4){
+    width: 20%;
+}
+.folWrap{
+    padding: 0px 20px 10px 20px;
+    height: 200px;
+    overflow-y: scroll;
+    background-color: #FFFFFF;
+    border-radius: 0px 0px 8px 8px;
+    border-bottom: none;
+    width: 90%;
+    background-color: #FFFFFF;
+}
+.fALink{
+    padding: 0px 10px;
+    height: fit-content;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fALink a{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    font-size: 12.5px;
+    font-weight: 600;
+    width: 60%;
+}
+.fALink .index{
+    font-size: 13px;
+    width: 4%;
+}
+.fALink .share{
+    font-size: 11px;
+    width: 16%;
+}
+.fALink .share p{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 9px;
+    padding: 3px 4.5px;
+    color: #685e5e;
+    background-color: #EAECF0;
+}
+.fALink .mod{
+    font-size: 12px;
+    width: 20%;
+    color: #667085;
+}
+.fALink .act{
+    color: #A2BCCB;
+    cursor: pointer;
+}
+
+
+/* PopUp */
+.popUpload{
+    position: fixed;
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 0;
+    top: 20%;
+    left: 30%;
+    width: 350px;
+    height: 400px;
+    box-shadow: 2px 2px 6px 2px #e4dede;
+    background-color: white;
+}
+.popUpload form{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popUpload .form{
+    width: 90%;
+}
+.popUpload label{
+    font-size: 14px;
+    font-weight: 400;
+}
+.popUpload .form div{
+    width: 300px;
+    height: 36px;
+    padding: 5px 0px 0px 10px;
+    margin: 10px 0px;
+    border-radius: 4px;
+    border: 1.5px solid rgb(172, 164, 164);
+}
+.popUpload .form .div{
+    width: 300px;
+    height: 32px;
+    padding: 0px 0px 10px 10px;
+    margin: 10px 0px;
+    border-radius: 4px;
+    border: 1.5px solid rgb(172, 164, 164);
+}
+.input{
+    width: 280px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+#inputFileUpload{
+    display: none;
+} 
+.labelInput section{
+    display: flex;
+    margin-bottom: 20px;
+}
+.labelInput section p:nth-child(1){
+    padding: 3px 5px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #2376E2;
+    border-radius: 8px;
+    background-color: #F0F6FA;
+}
+.labelInput section p:nth-child(2){
+    color: #667085;
+    font-size: 13px;
+}
+.btn{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.btn button:nth-child(1){
+    padding: 10px 30px;
+    border-radius: 16px;
+    border: 1px solid #2376E2;
+    background-color: #2376e20e;
+    color: #2376E2;
+}
+.btn button:nth-child(1):hover{
+    cursor: pointer;
+    border: 1px solid rgb(238, 231, 231);
+    transform: translateX(2px);
+    background-color: rgb(238, 231, 231);
+    box-shadow: 2px 2px 6px 2px #e4dede;
+    color: black;
+}
+
+.btn button:nth-child(1):active{
+    box-shadow: 2px 2px 4px 2px #666;
+    transform: translateY(2px);
+}
+.btn button:nth-child(2){
+    padding: 10px 30px;
+    border-radius: 16px;
+    border: 1px solid #2376E2;
+    background-color: #2376E2;
+    color: white;
+}
+.btn button:nth-child(2):hover{
+    padding: 10px 30px;
+    border-radius: 16px;
+    background:  #184894;
+    color: white;
+    box-shadow: 2px 2px 6px 2px #e4dede;
+    transform: translateX(2px);
+    border: 1px solid  #184894;
+}
+.btn button:nth-child(2):active{
+    box-shadow: 2px 2px 4px 2px #666;
+    transform: translateY(2px);
+}
+
+
+/* Action PopUp */
+.letm{
+    position: relative;
+}
+.actPop{
+    position: absolute;
+    bottom: -65px;
+    right: -25px;
+    width: 70px;
+    height: fit-content;
+    background-color: white;
+}
+.actPop button{
+    box-shadow: 2px 2px 6px 2px #e4dede;
+    height: 30px;
+    font-size: 12px;
+    width: 100%;
+    border: none;
+    border-bottom: 0.5px solid rgb(142, 137, 137);
+    outline: none;
+    background-color: transparent;
+    margin: 0;
+    cursor: pointer;
+}
+.actPop button:hover{
+    transform: translateY(2px);
+
+}
+
+
+@media screen and (max-width: 650px) {
+    .layout p:nth-child(2){
+        width: 50%;
+    }
+    .layout p:nth-child(3){
+        width: 20%;
+    }
+    .fALink div:nth-child(2){
+        width: 50%;
+    }
+    .fALink div:nth-child(3){
+        width: 20%;
+    }
+    .popUpload{
+        left: 10%;
+    }
+}
+
+
