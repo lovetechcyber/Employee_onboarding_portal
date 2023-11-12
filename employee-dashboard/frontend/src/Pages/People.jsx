@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Team = () => {
+const People = () => {
   return (
     <div>
-      Team
+      
     </div>
   )
 }
 
-export default Team
+export default People
