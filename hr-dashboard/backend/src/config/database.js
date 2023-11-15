@@ -1,5 +1,6 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
+// mongoose.set('strictQuery', false)
 const database = process.env.DATABASE
 
 const connectDatabase = async() => {
