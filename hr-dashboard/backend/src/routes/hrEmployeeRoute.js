@@ -5,9 +5,9 @@ const router = express.Router()
 const { registerHrEmployee, getAllEmployees, getEmployeeDetails } = require('../controllers/hrEmployeeController')
 
 
-router.get('/employees')
+router.get('/get-employees', getAllEmployees)
 router.get('/employee/:employeeId')
-router.post('/create-employee', userAuth, registerHrEmployee)
+router.post('/create-employee', registerHrEmployee)
 
 
 module.exports = router
