@@ -13,26 +13,34 @@ import Timekeeping from "./Pages/Timekeeping";
 import Signout from "./Pages/Signout";
 import ChatIcon from "./Pages/Dashboard/ChatIcon";
 import Timecard from "./Pages/Timecard";
+import LoginPage from "./Pages/LoginPage";
+import RegisterPage from "./Pages/RegisterPage";
+import axios from 'axios'
+
+axios.defaults.baseURL = 'http://localhost:5000'
 
 function App() {
   return (
     <>
       <Router>
-        <Layout>
+        {/* <Layout> */}
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/documents" element={<Documents />} />
-            <Route path="/announcements" element={<Announcements />} />
-            <Route path="/reports" element={<Reports />} />
-            <Route path="/timekeeping" element={<Timekeeping />} />
-            <Route path="/timecard" element={<Timecard />} />
-            <Route path="/signout" element={<Signout />} />
+            <Route exact path="/login" element={<LoginPage />} />
+            <Route exact path="/signup" element={<RegisterPage />} />
+
+            <Route path="/dashboard" element={ <Layout><Dashboard /></Layout> }/>
+            <Route path="/profile" element={ <Layout><Profile /></Layout> } />
+            <Route path="/team" element={ <Layout><Team /></Layout> } />
+            <Route path="/documents" element={ <Layout><Documents /></Layout> } />
+            <Route path="/announcements" element={ <Layout><Announcements /></Layout> } />
+            <Route path="/reports" element={ <Layout><Reports /></Layout> } />
+            <Route path="/timekeeping" element={ <Layout><Timekeeping /></Layout> } />
+            <Route path="/timecard" element={ <Layout><Timecard /></Layout> } />
+            <Route path="/signout" element={ <Layout><Signout /></Layout> } />
           </Routes>
           <ChatIcon />
-        </Layout>
+        {/* </Layout> */}
       </Router>
     </>
   );

@@ -1,12 +1,15 @@
 import React from 'react'
 import Layout from '../Components/Layout'
+import Header from '../Components/Header'
 
 const Home = () => {
   return (
     <div>
-        Home
+        <Header />
     </div>
   )
 }
 
 export default Home
+
+

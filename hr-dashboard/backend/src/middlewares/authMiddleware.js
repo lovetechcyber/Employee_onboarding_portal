@@ -11,7 +11,7 @@ const userAuth = async(req, res) => {
 
     try {
         const payload = JWT.verify(token, jwtKey)
-        req.user = { userId: payload.userId }
+        req.body.user = { userId: payload.userId }
         return res.status(200).send({ success: true, message: "Authentication Success"})
     } catch (error) {
         return res.status(400).send({ success: false, message: "Authentication Failed"})
