@@ -20,6 +20,12 @@ const variants = {
 function Layout({ children }) {
   const [isActive, setIsActive] = useState(true);
 
+  const handleLogout = () => {
+    localStorage.clear()
+    alert('Logout Successful')
+    Navigate('/')
+  }
+
   return (
     <div className="flex">
       <SidebarWrapper

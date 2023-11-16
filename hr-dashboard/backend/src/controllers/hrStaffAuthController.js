@@ -32,7 +32,7 @@ const registerAdmin = async(req, res, next) => {
     }
 }
 
-const loginAdmin = async(req, res) => {
+const loginAdmin = async(req, res, next) => {
     try {
         const { email, password } = req.body
         if (!email || !password) {
