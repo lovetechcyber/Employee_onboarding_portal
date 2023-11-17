@@ -10,12 +10,13 @@ import Documents from "./Pages/Documents";
 import Announcements from "./Pages/Announcements";
 import Reports from "./Pages/Reports";
 import Timekeeping from "./Pages/Timekeeping";
-import Signout from "./Pages/Signout";
 import ChatIcon from "./Pages/Dashboard/ChatIcon";
 import Timecard from "./Pages/Timecard";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import axios from 'axios'
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 axios.defaults.baseURL = 'http://localhost:5000'
 
@@ -24,6 +25,7 @@ function App() {
     <>
       <Router>
         {/* <Layout> */}
+          <ToastContainer />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<LoginPage />} />
@@ -37,7 +39,7 @@ function App() {
             <Route path="/reports" element={ <Layout><Reports /></Layout> } />
             <Route path="/timekeeping" element={ <Layout><Timekeeping /></Layout> } />
             <Route path="/timecard" element={ <Layout><Timecard /></Layout> } />
-            <Route path="/signout" element={ <Layout><Signout /></Layout> } />
+            {/* <Route path="/signout" element={ <Layout><Signout /></Layout> } /> */}
           </Routes>
           <ChatIcon />
         {/* </Layout> */}
