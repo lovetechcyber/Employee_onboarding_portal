@@ -11,6 +11,7 @@ import { TbReportSearch } from "react-icons/tb";
 import { FaSignOutAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const variants = {
   expanded: { width: "20%" },
@@ -19,6 +20,8 @@ const variants = {
 
 function Layout({ children }) {
   const [isActive, setIsActive] = useState(true);
+  const { user } = useSelector((state) => state.auth)
+  // const userName = user ? user.email : null;
 
   const handleLogout = () => {
     localStorage.clear()
@@ -171,7 +174,7 @@ function Layout({ children }) {
             </div>
             <div className="flex items-center">
               <FiSettings size={30} className="mr-5" />
-              <h2 className="">User</h2>
+              <h2 className="">{user?.name}</h2>
             </div>
           </div>
         </HeaderWrapper>
