@@ -3,6 +3,7 @@ const userAuth = require('../middlewares/authMiddleware')
 const router = express.Router()
 
 const { 
+        uploadImage,
         registerHrEmployee, 
         getAllEmployees, 
         updateEmployee, 
@@ -11,8 +12,9 @@ const {
 
 
 // router.get('/employee/:employeeId')
+router.post('/upload-image', uploadImage)
 router.post('/create-employee', registerHrEmployee)
-router.get('/get-employee', getAllEmployees)
+router.get('/get-employees', getAllEmployees)
 router.patch('/update-employee/:id', updateEmployee)
 router.delete('/delete-employee/:id', deleteEmployee)
 

@@ -5,8 +5,10 @@ const PORT = process.env.PORT || 5000
 const cors = require('cors')
 const helmet = require('helmet')
 
+const hrAnnouncement = require('./src/routes/hrAnnouncementRoute')
 const hrEmployeeRoute = require('./src/routes/hrEmployeeRoute')
 const hrStaffAuthRoute = require('./src/routes/hrStaffAuthRoute')
+
 const connectDatabase = require('./src/config/database')
 const userAuth = require('./src/middlewares/authMiddleware')
 const errorMiddleware = require('./src/middlewares/errorMiddleware')
@@ -18,6 +20,7 @@ server.use(helmet())
 
 server.use('/hr/auth', hrStaffAuthRoute)
 server.use('/hr/employee', hrEmployeeRoute)
+server.use('/hr/announcements', hrAnnouncement)
 
 server.use(errorMiddleware)
 
