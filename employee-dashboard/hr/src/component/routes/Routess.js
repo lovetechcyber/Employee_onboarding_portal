@@ -4,6 +4,7 @@ import AccountType from '../userLogin/accountType/AccountType';
 import { Routes, Route } from "react-router-dom";
 import Dashboard from '../dashboard/Dashboard';
 import Main from '../main/Main';
+import Onboarding from '../onboarding/Onboarding';
 
 
 function Routess() {
@@ -25,7 +26,8 @@ function Routess() {
 
 
           {/* {after login} */}
-            <Route  path="/dashboard" element={<Main props={navBar} pageLocation={<Dashboard  sendNavBar={handleNav}/>}/>} />
+            <Route path="/dashboard" element={<Main props={navBar} pageLocation={<Dashboard  sendNavBar={handleNav}/>}/>} />
+            <Route path='/onboarding' element={<Onboarding />} />
 
 
            

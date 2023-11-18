@@ -2,24 +2,21 @@ const Employee = require('../models/employee')
 
 const registerEmployee = async(req, res, next) => {
     try {
-        const { fullName, email, password } = req.body
+        const { id, fullName, mail, password } = req.body
         if(!fullName) {
             next("Name is Required")
-            // return res.status(400).send({ success: false, message: "Please provide name"})
         }
-        if (!email) {
+        if (!mail) {
             next("Email is Required")
-            // return res.status(400).send({ success: false, message: 'please provide email'})
         }
         if (!password) {
             next("Password is Required")
-            // return res.status(400).send({success:false, message: 'please provide password'})
         }
-        const existingUser = await Employee.findOne({ email })
+        const existingUser = await Employee.findOne({ mail })
         if (existingUser) {
             next("Email Already Exists, Please login")
         }
-        const user = await Employee.create({ fullName, email, password })
+        const user = await Employee.create({ fullName, mail, password, createdBy: id })
         const token =  user.createJWT()
         res.status(201).send({ 
             success: true, 
@@ -34,11 +31,11 @@ const registerEmployee = async(req, res, next) => {
 
 const loginEmployee = async(req, res, next) => {
     try {
-        const { email, password } = req.body
-        if (!email || !password) {
+        const { mail, password } = req.body
+        if (!mail || !password) {
             next("All fields are required")
         }
-        const user = await Employee.findOne({email}).select("+password")
+        const user = await Employee.findOne({mail}).select("+password")
         if (!user) {
             next("Invalid Credentials")
         }
@@ -59,7 +56,7 @@ const loginEmployee = async(req, res, next) => {
     }
 }
 
-const logoutEmployee = async(req, res) => {
+const logoutEmployee = async(req, res, next) => {
 
 }
 

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import style from './Dashboard.module.css';
-import shark from '../asset/images/shark.jpg'
+import profile from '../asset/images/profile.jpg'
 import { BiSolidDownArrow } from 'react-icons/bi';
 import { CgProfile } from 'react-icons/cg';
 import { IoMdNotificationsOutline } from 'react-icons/io';
@@ -41,7 +41,7 @@ function Dashboard(props) {
                             <h1>Welcome Back Jack!</h1>
                         </div>
                         <aside onClick={showSidePop}>
-                            <img src={shark} alt='sha' />
+                            {/* <img src={profile} alt='sha' /> */}
                             <i><BiSolidDownArrow /></i>
 
                             <UserPopUp trigger={showProfile}
@@ -69,7 +69,8 @@ function Dashboard(props) {
                         <div className={style.profile}>
                             <div></div>
                             <div className={style.profilePic}>
-                                <img src={shark} alt='sha' />
+                            <CgProfile size={50} />
+                                {/* <img src={profile} alt='sha' /> */}
                             </div>
                             <div>
                                 <h4>Jack</h4>
@@ -88,13 +89,14 @@ function Dashboard(props) {
                                 <h4>Email</h4>
                                 <p>jack@gmail.com</p>
                                 <h4>Manager</h4>
-                                <img src={shark} alt='sha' />
+                                <img src={profile} alt='sha' />
                             </div>
                         </div>
                         <section className={style.secondSection}>
                             <div className={style.onboardWrapper}>
-                                <Link to="/" className={style.onboard}>
-                                    <img src={shark} alt='sha' />   
+                                <Link to='/onboarding' className={style.onboard}>
+                                    {/* <img src={profile} alt='sha' />    */}
+                                        <CgProfile size={50} />
                                     <div>
                                         <h3>Onboarding</h3>
                                         <p>Check and complete your onboarding task</p>
@@ -106,7 +108,9 @@ function Dashboard(props) {
                                 <div className={style.forms}>
                                     <Link to="/">
                                         <aside>
-                                            <img src={shark} alt='sha' />
+                                            {/* <img src={profile} alt='sha' /> */}
+                                             <CgProfile size={50} />
+
                                             <span>
                                                 <h4>My Profile</h4>
                                                 <i><MdKeyboardArrowRight /></i>
@@ -116,7 +120,9 @@ function Dashboard(props) {
                                     </Link>
                                     <Link to="/">
                                         <aside>
-                                            <img src={shark} alt='sha' />
+                                            {/* <img src={profile} alt='sha' /> */}
+                                             <CgProfile size={50} />
+
                                             <span>
                                                 <h4>Directory</h4>
                                                 <i><MdKeyboardArrowRight /></i>
@@ -126,7 +132,9 @@ function Dashboard(props) {
                                     </Link>
                                     <Link to="/">
                                         <aside>
-                                            <img src={shark} alt='sha' />
+                                            {/* <img src={profile} alt='sha' /> */}
+                                             <CgProfile size={50} />
+
                                             <span>
                                                 <h4>My Leave</h4>
                                                 <i><MdKeyboardArrowRight /></i>
@@ -136,7 +144,9 @@ function Dashboard(props) {
                                     </Link>
                                     <Link to="/">
                                         <aside>
-                                            <img src={shark} alt='sha' />
+                                            {/* <img src={profile} alt='sha' /> */}
+                                             <CgProfile size={50} />
+
                                             <span>
                                                 <h4>Timesheets</h4>
                                                 <i><MdKeyboardArrowRight /></i>
@@ -146,7 +156,9 @@ function Dashboard(props) {
                                     </Link>
                                     <Link to="/">
                                         <aside>
-                                            <img src={shark} alt='sha' />
+                                            {/* <img src={profile} alt='sha' /> */}
+                                             <CgProfile size={50} />
+
                                             <span>
                                                 <h4>My Goals</h4>
                                                 <i><MdKeyboardArrowRight /></i>
@@ -156,7 +168,9 @@ function Dashboard(props) {
                                     </Link>
                                     <Link to="/">
                                         <aside>
-                                            <img src={shark} alt='sha' />
+                                            {/* <img src={profile} alt='sha' /> */}
+                                             <CgProfile size={50} />
+
                                             <span>
                                                 <h4>My Payslips</h4>
                                                 <i><MdKeyboardArrowRight /></i>
@@ -166,7 +180,9 @@ function Dashboard(props) {
                                     </Link>
                                     <Link to="/">
                                         <aside>
-                                            <img src={shark} alt='sha' />
+                                            {/* <img src={profile} alt='sha' /> */}
+                                             <CgProfile size={50} />
+
                                             <span>
                                                 <h4>My Claims</h4>
                                                 <i><MdKeyboardArrowRight /></i>
