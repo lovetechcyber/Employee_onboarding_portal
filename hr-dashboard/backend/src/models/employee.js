@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs')
+const JWT = require('jsonwebtoken')
+const jwtKey = process.env.JWT_SECRET
 
 const taskSchema = new mongoose.Schema({
     description: { type: String, required: true },
@@ -15,7 +17,7 @@ const questionSchema = new mongoose.Schema({
 
 const employeeSchema = new mongoose.Schema({
     fullName: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
+    mail: { type: String, required: true, unique: true },
     password: { type: String, required: true},
     profilePicture: {
       data: Buffer,
@@ -91,6 +93,15 @@ employeeSchema.pre('save', async function(next) {
         next(error);
     }
 });
+
+employeeSchema.methods.comparePassword = async function(userPassword) {
+  const isMatch = await bcrypt.compare(userPassword, this.password)
+  return isMatch
+}
+
+employeeSchema.methods.createJWT = function() {
+  return JWT.sign({ userId:this._id}, jwtKey, {expiresIn: '1d'})
+}
 
 const hrEmployee = mongoose.model('Employee', employeeSchema);
 

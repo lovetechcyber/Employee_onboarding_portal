@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { BsCalendarDateFill, BsArrowReturnRight } from "react-icons/bs";
-import { BiDirections, BiLinkExternal } from "react-icons/bi";
 import { FiRefreshCcw, FiExternalLink } from "react-icons/fi";
-import Popover from '../Components/Popover';
-import Sidebar from '../Components/Sidebar';
-import ModalComponent from '../Components/FileModal';
-import AccordionComponent from '../Components/Accordion';
-import AccordionComp from '../Components/Accordion';
+import AccordionComponent from './Accordion';
+import ModalComponent from './FileModal';
+import Navbar from './Navbar';
+import Popover from './Popover';
+import Sidebar from './Sidebar';
 
 
-const Home = () => {
+const Onboarding = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  // const { user } = useSelector((state) => state.auth)
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -19,9 +18,10 @@ const Home = () => {
 
   return (
     <>
+    <Navbar />
       <div className='container mx-auto flex flex-col py-4 px-6 bg-white shadow w-full'>
         <div className='mb-2 sm:mb-0'>
-          <Link to='/' className='text-2xl no-underline text-grey-darkest hover:text-blue-dark'>Home</Link>
+          <Link to='/dashboard' className='text-2xl no-underline text-grey-darkest hover:text-blue-dark'>Home</Link>
           <span className='text-2xl'> / </span>
           <div className="relative inline-flex items-center">
             <button
@@ -74,6 +74,7 @@ const Home = () => {
               className="flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700"
             />
             <div className="flex flex-col">
+              {/* <h4 className="text-lg font-semibold md:text-left">Hello {user?.fullName}</h4> */}
               <h4 className="text-lg font-semibold md:text-left">Hello User</h4>
               <p className="dark:text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             </div>
@@ -147,12 +148,6 @@ const Home = () => {
          
             </div>
             
-            {/* Pagination */}
-            {/* <div className="flex items-center py-8">
-              <a href="#" className="h-10 w-10 bg-blue-800 hover:bg-blue-600 font-semibold text-white text-sm flex items-center justify-center">1</a>
-              <a href="#" className="h-10 w-10 font-semibold text-gray-800 hover:bg-blue-600 hover:text-white text-sm flex items-center justify-center">2</a>
-              <a href="#" className="h-10 w-10 font-semibold text-gray-800 hover:text-gray-900 text-sm flex items-center justify-center ml-3">Next <i className="fas fa-arrow-right ml-2"></i></a>
-            </div> */}
           </section>
 
           <Sidebar />
@@ -161,4 +156,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Onboarding
