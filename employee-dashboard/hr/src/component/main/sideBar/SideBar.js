@@ -10,6 +10,7 @@ import { FiLogIn } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import { NavLink, Link } from "react-router-dom";
 import shark from '../../asset/images/shark.jpg'
+import { CgProfile } from "react-icons/cg";
 
 
 
@@ -59,7 +60,8 @@ return(
                     <AiOutlineClose /></i>
                 </aside>
                 <div>
-                    <img src={shark} alt="Logo" />
+                    {/* <img src={shark} alt="Logo" /> */}
+                    <CgProfile size={50} />
                 </div>
                 </section>
             </div>

@@ -8,6 +8,7 @@ const helmet = require('helmet')
 const hrAnnouncement = require('./src/routes/hrAnnouncementRoute')
 const hrEmployeeRoute = require('./src/routes/hrEmployeeRoute')
 const hrStaffAuthRoute = require('./src/routes/hrStaffAuthRoute')
+const employeeAuthRoute = require('./src/routes/EmployeeAuthRoute')
 
 const connectDatabase = require('./src/config/database')
 const userAuth = require('./src/middlewares/authMiddleware')
@@ -19,6 +20,7 @@ server.use(express.json())
 server.use(helmet())
 
 server.use('/hr/auth', hrStaffAuthRoute)
+server.use('/hr/employee-auth', employeeAuthRoute)
 server.use('/hr/employee', hrEmployeeRoute)
 server.use('/hr/announcements', hrAnnouncement)
 

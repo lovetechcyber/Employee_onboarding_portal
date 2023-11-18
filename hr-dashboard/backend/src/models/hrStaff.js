@@ -11,9 +11,9 @@ const adminSchema = new Schema(
       required: true,
     },
     email: {
-      type: String,
-      required: [true, "Email is Required"],
-      // unique: true
+        type: String,
+        required: [true, "Email is Required"],
+        unique: true
     },
     password: {
       type: String,
