@@ -8,8 +8,10 @@ import { GiTeamDowngrade } from "react-icons/gi";
 import { HiOutlineDocument } from "react-icons/hi";
 import { GrAnnounce } from "react-icons/gr";
 import { TbReportSearch } from "react-icons/tb";
+import { FaSignOutAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const variants = {
   expanded: { width: "20%" },
@@ -18,6 +20,14 @@ const variants = {
 
 function Layout({ children }) {
   const [isActive, setIsActive] = useState(true);
+  const { user } = useSelector((state) => state.auth)
+  // const userName = user ? user.email : null;
+
+  const handleLogout = () => {
+    localStorage.clear()
+    alert('Logout Successful')
+    Navigate('/')
+  }
 
   return (
     <div className="flex">
@@ -25,26 +35,26 @@ function Layout({ children }) {
         animate={isActive ? "expanded" : "nonExpanded"}
         variants={variants}
         className={
-          "py-12 h-screen flex flex-col border border-r-1 w-1/5" +
+          "h-screen flex flex-col border border-r-1 w-1/5" +
           (isActive ? "px-10" : "px-4")
         }
       >
-        <div className="flex space-x-3 items-center">
-          <img src="" alt="Portal Logo" />
-          <span className={isActive ? "block" : "hidden"}>Employee Portal</span>
+        <div className="flex justify-center items-center">
+          <img src="/employee-portal.jpg" height='150' width='150'  alt="Portal Logo" />
+          {/* <span className={isActive ? "block" : "hidden"}>Employee Portal</span> */}
         </div>
 
-        <div className="mt-10 flex flex-col space-y-8">
+        <div className="mt-3 flex flex-col space-y-8">
           <div className="w-full">
             <NavLink
               to="/dashboard"
               className={({ isActive }) =>
                 isActive
-                  ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
+                  ? "flex space-x-3 w-full p-5 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
                   : "flex space-x-3 w-full p-2 rounded cursor-pointer items-center"
               }
             >
-              <AiFillDashboard />
+              <span className=""><AiFillDashboard /></span>
               <span className={!isActive ? "hidden" : "block"}>DASHBOARD</span>
             </NavLink>
           </div>
@@ -54,7 +64,7 @@ function Layout({ children }) {
               to="/profile"
               className={({ isActive }) =>
                 isActive
-                  ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
+                  ? "flex space-x-3 w-full p-5 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
                   : "flex space-x-3 w-full p-2 rounded cursor-pointer items-center"
               }
             >
@@ -68,7 +78,7 @@ function Layout({ children }) {
               to="/team"
               className={({ isActive }) =>
                 isActive
-                  ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
+                  ? "flex space-x-3 w-full p-5 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
                   : "flex space-x-3 w-full p-2 rounded cursor-pointer items-center"
               }
             >
@@ -82,7 +92,7 @@ function Layout({ children }) {
               to="/documents"
               className={({ isActive }) =>
                 isActive
-                  ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
+                  ? "flex space-x-3 w-full p-5 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
                   : "flex space-x-3 w-full p-2 rounded cursor-pointer items-center"
               }
             >
@@ -96,7 +106,7 @@ function Layout({ children }) {
               to="/announcements"
               className={({ isActive }) =>
                 isActive
-                  ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
+                  ? "flex space-x-3 w-full p-5 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
                   : "flex space-x-3 w-full p-2 rounded cursor-pointer items-center"
               }
             >
@@ -112,7 +122,7 @@ function Layout({ children }) {
               to="/reports"
               className={({ isActive }) =>
                 isActive
-                  ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
+                  ? "flex space-x-3 w-full p-5 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
                   : "flex space-x-3 w-full p-2 rounded cursor-pointer items-center"
               }
             >
@@ -126,7 +136,7 @@ function Layout({ children }) {
               to="/timekeeping"
               className={({ isActive }) =>
                 isActive
-                  ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
+                  ? "flex space-x-3 w-full p-5 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
                   : "flex space-x-3 w-full p-2 rounded cursor-pointer items-center"
               }
             >
@@ -142,11 +152,11 @@ function Layout({ children }) {
               to="/signout"
               className={({ isActive }) =>
                 isActive
-                  ? "flex space-x-3 w-full p-6 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
+                  ? "flex space-x-3 w-full p-5 rounded cursor-pointer border-y-4 border-indigo-500 items-center"
                   : "flex space-x-3 w-full p-2 rounded cursor-pointer items-center"
               }
             >
-              <TbReportSearch />
+              <FaSignOutAlt />
               <span className={!isActive ? "hidden" : "block"}>SIGNOUT</span>
             </NavLink>
           </div>
@@ -156,7 +166,7 @@ function Layout({ children }) {
       <ChildrenWrapper>
         <HeaderWrapper
           className="bg-blue-900 text-white fixed p-5"
-          $headerWidth={isActive ? "calc(100vw - 20vw)" : "calc(100vw - 5vw)"}
+          $headerWidth={isActive ? "calc(100vw - 20vw)" : "calc(100vw - 6vw)"}
         >
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
             <div className="" onClick={() => setIsActive(!isActive)}>
@@ -164,7 +174,7 @@ function Layout({ children }) {
             </div>
             <div className="flex items-center">
               <FiSettings size={30} className="mr-5" />
-              <h2 className="">User</h2>
+              <h2 className="">{user?.name}</h2>
             </div>
           </div>
         </HeaderWrapper>

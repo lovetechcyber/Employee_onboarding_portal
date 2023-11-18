@@ -1,15 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { SiPowerpages } from "react-icons/si";
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import Tabs from '../Components/Tab';
-
+import axios from 'axios'
+import { toast } from 'react-toastify'
 
 const Profile = () => {
+  const [profileData, setProfileData] = useState({
+    fullName: '',
+    email: ''
+  })
+
+  useEffect(() => {
+    fetchProfileData()
+  }, [])
+
+  const fetchProfileData = async () => {
+    try {
+        const { data } = await axios.get('/hr/employee/get-employees');
+        // Assuming data is an array, you may need to adjust this based on your API response structure
+        const userProfile = data.find((user) => user.fullName === 'HR Staff');
+        setProfileData(userProfile);
+    } catch (error) {
+        console.error(error);
+    }
+  };
+
+  const handleUpdateProfile = async () => {
+    try {
+        const { data } = await axios.put(`/hr/employee/update-employee/${profileData._id}`, profileData);
+        console.log(data);
+        toast.success('Employee Details Successfully Updated')
+    } catch (error) {
+        console.error(error);
+        toast.error('Cannot Update Details')
+    }
+  };
+
   return (
     <>
     <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 mt-32'>
         <div className="border-l-4 border-indigo-500">
-          <h1 className='pl-5 text-3xl font-semibold'>User</h1>
+          <h1 className='pl-5 text-3xl font-semibold'>{profileData.fullName}</h1>
           <p className="pl-5 self-center text-2xl whitespace-nowrap dark:text-white">Profile</p>
         </div>
 
@@ -55,7 +87,7 @@ const Profile = () => {
     </div>
 
     <div className='container mx-auto border border-slate-300 p-4'>
-      <Tabs />
+      <Tabs profileData={profileData} />
     </div>
     </>
   )
