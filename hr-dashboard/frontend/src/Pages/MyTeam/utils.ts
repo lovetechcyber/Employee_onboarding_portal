@@ -49,6 +49,8 @@ export interface DeleteBtnsProps {
   onClickNo: () => void;
 }
 export interface TeamMemberFormProps {
-  deleteMember: (email: string) => void;
-  updateMember: (details: TeamMemberProps) => void;
+  deleteMember?: (email: string) => void;
+  updateMember?: (details: TeamMemberProps) => void;
+  register: boolean;
+  onClickLink: () => void;
 }
