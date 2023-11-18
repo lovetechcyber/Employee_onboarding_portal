@@ -166,7 +166,7 @@ function Layout({ children }) {
       <ChildrenWrapper>
         <HeaderWrapper
           className="bg-blue-900 text-white fixed p-5"
-          $headerWidth={isActive ? "calc(100vw - 20vw)" : "calc(100vw - 6vw)"}
+          $headerWidth={isActive ? "calc(100vw - 20vw)" : "calc(100vw - 5vw)"}
         >
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
             <div className="" onClick={() => setIsActive(!isActive)}>

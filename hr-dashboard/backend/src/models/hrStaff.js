@@ -1,5 +1,4 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
+const  {model, Schema} = require("mongoose")
 const bcrypt = require("bcryptjs")
 const JWT = require("jsonwebtoken")
 const jwtKey = process.env.JWT_SECRET
@@ -39,4 +38,4 @@ adminSchema.methods.createJWT = function () {
   return JWT.sign({ userId: this._id }, jwtKey, { expiresIn: "1d" })
 }
 
-module.exports = mongoose.model("Admin", adminSchema)
+module.exports = model("Admin", adminSchema)
