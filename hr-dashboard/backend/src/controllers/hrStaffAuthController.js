@@ -4,31 +4,31 @@ const registerAdmin = async(req, res, next) => {
     try {
         const { name, email, password } = req.body
         if(!name) {
-            next("Name is Required")
+           return next("Name is Required")
             // return res.status(400).send({ success: false, message: "Please provide name"})
         }
         if (!email) {
-            next("Email is Required")
+           return next("Email is Required")
             // return res.status(400).send({ success: false, message: 'please provide email'})
         }
         if (!password) {
-            next("Password is Required")
+           return next("Password is Required")
             // return res.status(400).send({success:false, message: 'please provide password'})
         }
         const existingUser = await Admin.findOne({ email })
         if (existingUser) {
-            next("Email Already Exists, Please login")
+           return next("Email Already Exists, Please login")
         }
         const user = await Admin.create({ name, email, password })
         const token =  user.createJWT()
-        res.status(201).send({ 
+        return res.status(201).send({ 
             success: true, 
             message: 'User Created Successfully', 
             user, 
             token 
         })
     } catch (error) {
-        next(error)
+       return next(error)
     }
 }
 

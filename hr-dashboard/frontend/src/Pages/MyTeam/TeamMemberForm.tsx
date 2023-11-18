@@ -14,10 +14,13 @@ import {
   TeamMemberRegFormWrapper,
 } from "./MyTeam.styled";
 import DeletePrompt from "./DeletePrompt";
+import { IoIosPerson } from "react-icons/io";
 
 const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
   deleteMember,
   updateMember,
+  register,
+  onClickLink,
 }) => {
   const location = useLocation();
   const userDetails = location.state;
@@ -46,12 +49,12 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
 
   const handleToggleBtnText = () => {
     setBtnText((prevBtnText) => (prevBtnText === "Edit" ? "Update" : "Edit"));
-    btnText === "Update" && updateMember(details);
+    btnText === "Update" && updateMember!(details);
   };
 
   const handlePressEnter = (event: React.KeyboardEvent<HTMLFormElement>) => {
     if (event.key === "Enter" && btnText === "Update") {
-      updateMember(details);
+      updateMember!(details);
     }
   };
 
@@ -69,22 +72,27 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
 
   return (
     <TeamMemberRegFormWrapper>
-      <TeamMemberAvatarWrapper
-        $bgImg={details?.avatar!}
-      ></TeamMemberAvatarWrapper>
-      <Link to="/team" state={null}>
+      <TeamMemberAvatarWrapper $bgImg={details?.avatar!}>
+        {!details.avatar && <IoIosPerson />}
+      </TeamMemberAvatarWrapper>
+      <Link
+        to={register ? "/dashboard" : "/team"}
+        state={null}
+        onClick={register ? onClickLink : () => {}}
+      >
         <CloseIcon />
       </Link>
       <TeamMemberRegForm onKeyDown={handlePressEnter}>
         {userFormLabels.map((text, index) => (
           <TeamMemberFormLabel
-            $inputColor={btnText === "Edit" ? "#B0B0B0" : ""}
+            $inputColor={btnText === "Edit" && !register ? "#B0B0B0" : ""}
             htmlFor={text}
             key={text}
           >
-            <span>{text}</span>
+            <span>{index === 0 && register ? "Full Name" : text}</span>
             <InputField
               id={text}
+              title={text}
               name={names[index]}
               value={index === 1 && profilePic ? "" : values[index]}
               onChange={handleInputChange}
@@ -97,23 +105,29 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
                   ? "tel"
                   : "text"
               }
-              disabled={btnText === "Edit"}
+              disabled={!register && btnText === "Edit"}
             />
           </TeamMemberFormLabel>
         ))}
         <FormBtnsWrapper>
-          <EditButton
-            children={btnText}
-            type="button"
-            onClick={handleToggleBtnText}
-          />
-          <DeleteButton onClick={() => setShowDeletePrompt(true)} />
-          {showDeletePrompt && (
-            <DeletePrompt
-              detail={details.name}
-              onClickYes={() => deleteMember(details.email)}
-              onClickNo={() => setShowDeletePrompt(false)}
-            />
+          {!register ? (
+            <>
+              <EditButton
+                children={btnText}
+                type="button"
+                onClick={handleToggleBtnText}
+              />
+              <DeleteButton onClick={() => setShowDeletePrompt(true)} />
+              {showDeletePrompt && (
+                <DeletePrompt
+                  detail={details.name}
+                  onClickYes={() => deleteMember!(details.email)}
+                  onClickNo={() => setShowDeletePrompt(false)}
+                />
+              )}
+            </>
+          ) : (
+            <EditButton children="Submit" />
           )}
         </FormBtnsWrapper>
       </TeamMemberRegForm>

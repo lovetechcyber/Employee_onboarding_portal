@@ -1,5 +1,5 @@
 import React from "react";
-import { btnTexts, getCurrentFormattedDate } from "./utils";
+import { DashBoardTopProps, btnTexts, getCurrentFormattedDate } from "./utils";
 import Button from "../../Components/Button";
 import { AiFillPlusCircle } from "react-icons/ai";
 import {
@@ -10,7 +10,7 @@ import {
   TopBtn,
 } from "./Dashboard.styled";
 
-const DashboardTop = () => {
+const DashboardTop: React.FC<DashBoardTopProps> = ({ onClick }) => {
   return (
     <DashboardTopWrapper>
       <Greeting>
@@ -27,6 +27,7 @@ const DashboardTop = () => {
                 <span>{text}</span>
               </BtnChildren>
             }
+            onClick={() => onClick(text)}
           />
         ))}
       </BtnsWrapper>

@@ -19,7 +19,7 @@ const CompanyLinks = () => {
       </MyTimeTop>
       <LinksList>
         {companyLinks.map((link) => (
-          <li>
+          <li key={link.title}>
             <Link to={link.route}>{link.title}</Link>
           </li>
         ))}

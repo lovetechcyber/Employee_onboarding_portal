@@ -243,6 +243,12 @@ export const TeamMemberAvatarWrapper = styled.div<TeamMemberAvatarProp>`
   background: url("${({ $bgImg }) => $bgImg}") no-repeat center;
   background-size: 100% 100%;
   border-radius: 50%;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    color: #b0b0b0;
+  }
 `;
 
 export const TeamMemberBody = styled.div`

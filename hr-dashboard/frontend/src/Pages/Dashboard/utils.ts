@@ -125,3 +125,7 @@ export interface CompanyLinksProps {
   title: string;
   route: string;
 }
+
+export interface DashBoardTopProps {
+  onClick: (text: string) => void;
+}

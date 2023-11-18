@@ -36,6 +36,7 @@ const TimeOff = () => {
         <IndicatorsWrapper>
           {timeOffRequests.map((request) => (
             <Indicator
+              key={request.name}
               $cursor={request === currentRequest ? "not-allowed" : "pointer"}
               $width={request === currentRequest ? "0.8rem" : "0.5rem"}
               $height={request === currentRequest ? "1rem" : "0.5rem"}
