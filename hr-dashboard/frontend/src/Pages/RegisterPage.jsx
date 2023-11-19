@@ -43,7 +43,7 @@ function RegisterPage() {
     } catch (error) {
       if (error.response.data.error) {
         toast.error(`Server Error: ${error.response.data.error}`);
-      } else if (error.response) {
+      } else if (error.message) {
         toast.error(`Server Error: ${error.message}`);
       } else if (error.request) {
         alert("No response from the server. Please try again later.");

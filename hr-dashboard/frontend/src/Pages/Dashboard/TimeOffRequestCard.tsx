@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../../Components/Button";
 import { TimeOffRequestCardProps } from "./utils";
 import {
   TimeOffRequestCardWrapper,

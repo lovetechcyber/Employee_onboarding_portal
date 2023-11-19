@@ -1,6 +1,5 @@
 import React from "react";
 import { DashBoardTopProps, btnTexts, getCurrentFormattedDate } from "./utils";
-import Button from "../../Components/Button";
 import { AiFillPlusCircle } from "react-icons/ai";
 import {
   BtnChildren,

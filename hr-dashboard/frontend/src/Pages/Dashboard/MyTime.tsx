@@ -9,7 +9,6 @@ import {
   MyTimeBodyCenter,
   MyTimeBodyLeft,
   MyTimeBodyRight,
-  MyTimeBottom,
   MyTimeTop,
   MyTimeWrapper,
 } from "./Dashboard.styled";
