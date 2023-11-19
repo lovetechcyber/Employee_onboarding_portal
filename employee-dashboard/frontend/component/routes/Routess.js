@@ -27,9 +27,11 @@ function Routess() {
 
 
           {/* {after login} */}
-            <Route path="/dashboard" element={<Main props={navBar} pageLocation={<Dashboard  sendNavBar={handleNav}/>}/>} />
-            <Route path='../../../../hrdasboard/frontend/hrapp' element={<App />} />
-            <Route path='/onboarding' element={<Onboarding />} />
+            
+          <Route path="/dashboard" element={<Main props={navBar} pageLocation={<Dashboard  sendNavBar={handleNav}/>}/>} />
+          <Route path='/onboarding' element={<Onboarding />} />
+          <Route path='../../../../hrdasboard/frontend/hrapp' element={<App />} />
+            
 
 
            
