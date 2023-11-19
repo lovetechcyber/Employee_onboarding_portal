@@ -28,8 +28,6 @@ function App() {
           <ToastContainer />
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/login" element={<LoginPage />} />
-            <Route exact path="/signup" element={<RegisterPage />} />
 
             <Route path="/dashboard" element={ <Layout><Dashboard /></Layout> }/>
             <Route path="/profile" element={ <Layout><Profile /></Layout> } />
