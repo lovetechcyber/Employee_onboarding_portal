@@ -1,5 +1,5 @@
-import { useState } from "react";
-import Routess from './component/routes/Routess';
+
+import Routess from "../employee-dashboard/frontend/component/routes/Routess";
 
 <div className="App">
 <Routess />
