@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import style from './AccountType.module.css'
 import { AiFillCheckCircle } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
+import Dashboard from '../../../../../hrdasboard/frontend/Pages/Dashboard/Dashboard';
 
 function AccountType() {
     const [employee, setEmployee] = useState(false);
@@ -29,7 +30,7 @@ function AccountType() {
                         }}
                         /></span>
                     </Link>
-                    <Link to="/hr" 
+                    <Link to="./../../../../../hrdasboard/frontend/Pages/Dashboard/Dashboard" 
                     onClick={ () => 
                       {
                       // e.preventDefault();
