@@ -1,0 +1,120 @@
+.sideBarWrapper{
+    background-color: #2167D9;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.logo div{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+}
+.logo aside{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30px;
+    color: white;
+}
+.navLinkWrapper{
+    height: 80vh;
+}
+.navLink{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+}
+.sideBarWrapper div a{
+    text-decoration: none;
+}
+.firstSectionLink{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 55%;
+}
+.firstSectionLink a{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    height: 45px;
+    margin-bottom: 2px;
+}
+.firstSectionLink li a::before{
+    position: relative;
+    content: "";
+    top: 0;
+    right: -109%;
+    width: 0px;
+    height: 2.2em;
+    background-color: white;
+    border-radius: 0.8em;
+}
+.firstSectionLink li .active::before{
+    position: relative;
+    content: "";
+    top: 0;
+    right: -109%;
+    width: 0px;
+    height: 2.2em;
+    background-color: white;
+    border-radius: 0.8em;
+}
+.firstSectionLink li a:hover::before,
+.firstSectionLink li .active::before{
+    width: 5px;
+    transition: 0.3s; 
+}
+.firstSectionLink a:hover,
+.firstSectionLink .active{
+    width: 90%;
+    color: rgb(27, 93, 27);
+    background-color:  white;
+    border-radius: 10px;
+}
+.firstSectionLink li{
+    list-style: none;
+}
+.sideBarWrapper div a i{
+    color: white;
+    margin: 5px 8px 0px 0px;
+    padding-left: 10%;
+}
+.firstSectionLink a:hover i,
+.firstSectionLink .active i{
+    color: rgb(27, 93, 27);
+    margin: 5px 8px 0px 0px;
+}
+.sideBarFooter div a div{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    height: 30px;
+}
+.sideBarFooter div a{
+    text-decoration: none;
+}
+.sideBarFooter div i{
+    color: white;
+    margin: 4px 0px 0px 0px;
+}
+@media screen and (max-height: 350px){
+    .navLinkWrapper{
+        height: 55vh;
+    }
+    .firstSectionLink{
+        height: 60%;
+    }
+}
