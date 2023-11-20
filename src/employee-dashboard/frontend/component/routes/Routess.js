@@ -6,6 +6,7 @@ import Dashboard from '../dashboard/Dashboard';
 import App from '../../../../hrdasboard/frontend/hrapp';
 import Main from '../main/Main';
 import Onboarding from '../onboarding/Onboarding';
+import LoginPage from '../../../../hrdasboard/frontend/src/Pages/LoginPage';
 
 
 function Routess() {
@@ -21,7 +22,7 @@ function Routess() {
         <Routes>
             <Route path="/" element={<AccountType /> } />
             <Route path="/personnel" element={ <EmployeeSignIn />} />
-            <Route path="/hr" element={ <EmployeeSignIn />} />
+            <Route path="/hr" element={ <LoginPage />} />
 
           
 

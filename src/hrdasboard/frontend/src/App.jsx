@@ -29,7 +29,7 @@ function App() {
         <ToastContainer />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/login" element={<LoginPage />} />
+          {/* <Route exact path="/hr" element={<LoginPage />} /> */}
           <Route exact path="/signup" element={<RegisterPage />} />
 
           <Route
