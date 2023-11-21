@@ -20,14 +20,14 @@ const variants = {
 
 function Layout({ children }) {
   const [isActive, setIsActive] = useState(true);
-  const { user } = useSelector((state) => state.auth)
+  const { user } = useSelector((state) => state.auth);
   // const userName = user ? user.email : null;
 
   const handleLogout = () => {
-    localStorage.clear()
-    alert('Logout Successful')
-    Navigate('/')
-  }
+    localStorage.clear();
+    alert("Logout Successful");
+    Navigate("/");
+  };
 
   return (
     <div className="flex">
@@ -39,11 +39,17 @@ function Layout({ children }) {
           (isActive ? "px-10" : "px-4")
         }
       >
-        <div className="flex justify-center items-center">
-          <img src="/employee-portal.jpg" height='150' width='150'  alt="Portal Logo" />
-          {/* <span className={isActive ? "block" : "hidden"}>Employee Portal</span> */}
-        </div>
-
+        <Link to="/">
+          <div className="flex justify-center items-center">
+            <img
+              src="/employee-portal.jpg"
+              height="150"
+              width="150"
+              alt="Portal Logo"
+            />
+            {/* <span className={isActive ? "block" : "hidden"}>Employee Portal</span> */}
+          </div>
+        </Link>
         <div className="mt-3 flex flex-col space-y-8">
           <div className="w-full">
             <NavLink
@@ -54,7 +60,9 @@ function Layout({ children }) {
                   : "flex space-x-3 w-full p-2 rounded cursor-pointer items-center"
               }
             >
-              <span className=""><AiFillDashboard /></span>
+              <span className="">
+                <AiFillDashboard />
+              </span>
               <span className={!isActive ? "hidden" : "block"}>DASHBOARD</span>
             </NavLink>
           </div>
@@ -179,9 +187,7 @@ function Layout({ children }) {
           </div>
         </HeaderWrapper>
 
-        <div className={!isActive ? "md:-ml-56" : "block"}>
-          {children}
-        </div>
+        <div className={!isActive ? "md:-ml-56" : "block"}>{children}</div>
       </ChildrenWrapper>
     </div>
   );
@@ -193,6 +199,7 @@ const SidebarWrapper = styled(motion.div)`
   position: fixed;
   z-index: 999;
   background: #fff;
+  overflow: auto;
 `;
 
 const HeaderWrapper = styled.nav`
@@ -205,7 +212,3 @@ const ChildrenWrapper = styled.div`
   width: calc(100vw - 20vw);
   margin-left: auto;
 `;
-
-
-
-

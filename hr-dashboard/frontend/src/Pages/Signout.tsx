@@ -2,13 +2,11 @@ import React from "react";
 import Button from "../Components/Button";
 import styled from "styled-components";
 import { deleteCookie } from "../helpers";
-import { useNavigate } from "react-router-dom";
 
 const Signout = () => {
-  const navigate = useNavigate();
   const handleDeleteCookie = () => {
     deleteCookie("hrToken");
-    navigate("/");
+    location.href = "/";
   };
   return (
     <SignoutWrapper>

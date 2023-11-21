@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux';
-import { hideLoading, showLoading } from '../redux/alertSlice';
-import Spinner from '../Components/Spinner';
-import { toast } from 'react-toastify'
-import { setUser } from '../redux/authSlice';
-
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { hideLoading, showLoading } from "../redux/alertSlice";
+import Spinner from "../Components/Spinner";
+import { toast } from "react-toastify";
+import { setUser } from "../redux/authSlice";
 
 function LoginPage() {
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const {loading} = useSelector(state => state.alerts)
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.alerts);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -27,49 +26,58 @@ function LoginPage() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      dispatch(showLoading())
-      const {data} = await axios.post('/hr/auth/login', {...formData})
-      if(data.success){
-        dispatch(hideLoading())
-        dispatch(setUser(data.user))
+      dispatch(showLoading());
+      const { data } = await axios.post("/hr/auth/login", { ...formData });
+      if (data.success) {
+        dispatch(hideLoading());
+        dispatch(setUser(data.user));
         console.log(data.user);
-        localStorage.setItem('token', data.token)
-        toast.success('Login Successful')
-        navigate('/dashboard')
+        document.cookie = `hrToken=${data.token}`;
+        toast.success("Login Successful");
+        navigate("/dashboard");
       }
     } catch (error) {
-      dispatch(hideLoading())
-      toast.error('Invalid Credentials, Please Try  Again.')
+      dispatch(hideLoading());
+      toast.error("Invalid Credentials, Please Try  Again.");
       console.log(error);
     }
     console.log(formData);
     setFormData({
       email: "",
       password: "",
-    })
-  }
+    });
+  };
 
   return (
     <>
-    {loading ? (
-      <Spinner />
-        ) : (
+      {loading ? (
+        <Spinner />
+      ) : (
         <section className="bg-gray-50 dark:bg-gray-900">
           <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            <Link to='/' className="flex items-center">
-                <img src="" className="h-8 mr-3" alt="Logo" />
-                <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">HR DASHBOARD</span>
+            <Link to="/" className="flex items-center">
+              <img src="" className="h-8 mr-3" alt="Logo" />
+              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                HR DASHBOARD
+              </span>
             </Link>
             <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
               <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Sign in to your account
                 </h1>
-                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6" action="#">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-4 md:space-y-6"
+                  action="#"
+                >
                   <div>
-                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    <label
+                      htmlFor="email"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
                       Your email
                     </label>
                     <input
@@ -84,7 +92,10 @@ function LoginPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    <label
+                      htmlFor="password"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
                       Password
                     </label>
                     <input
@@ -109,10 +120,20 @@ function LoginPage() {
                         />
                       </div>
                       <div className="ml-3 text-sm">
-                        <label htmlFor="remember" className="text-gray-500 dark:text-gray-300">Remember me</label>
+                        <label
+                          htmlFor="remember"
+                          className="text-gray-500 dark:text-gray-300"
+                        >
+                          Remember me
+                        </label>
                       </div>
                     </div>
-                    <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
+                    <a
+                      href="#"
+                      className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+                    >
+                      Forgot password?
+                    </a>
                   </div>
                   <button
                     type="submit"
@@ -121,7 +142,13 @@ function LoginPage() {
                     Sign in
                   </button>
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Don’t have an account yet? <Link to='/signup' className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</Link>
+                    Don’t have an account yet?{" "}
+                    <Link
+                      to="/signup"
+                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                    >
+                      Sign up
+                    </Link>
                   </p>
                 </form>
               </div>
@@ -130,7 +157,6 @@ function LoginPage() {
         </section>
       )}
     </>
-    
   );
 }
 
